@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse Freelancers | Hierly</title>
+    <link rel="icon" href="../assets/Favicons/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/MainPage.css">
+    <link rel="stylesheet" href="../css/freelancers.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="navigationBar">
+        <nav class="navbar navbar-expand-lg bg-dark p-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="MainPage.html">
+                    <img src="../assets/Logos/logo.png" width="120px" alt="Hierly Logo">
+                </a>
+
+                <ul id="navigation" class="navbar-nav d-flex flex-row align-items-center gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-white" href="MainPage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-white active" href="freelancers.html">Freelancers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-white" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-white" href="login.html">Login</a>
+                    </li>
+                </ul>
+
+                <div id="buttons">
+                    <button class="btn btn-outline-success">Log in</button>
+                    <button class="btn btn-success">Sign up</button>
+                </div>
+
+                <div id="menuBar" class="menu-icon">
+                    <i id="menuIcon" class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="freelancers-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>Find the Perfect Freelancer</h1>
+                    <p>Browse through our verified Sri Lankan freelancers and hire the best talent for your projects</p>
+                </div>
+            </div>
+            
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="search-box">
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Search freelancers by skills, name, or expertise...">
+                                <button class="btn btn-success">
+                                    <i class="fas fa-search"></i> Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <button class="btn btn-outline-light w-100" data-bs-toggle="collapse" data-bs-target="#filterPanel">
+                            <i class="fas fa-filter"></i> Advanced Filters
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Filter Panel -->
+                <div class="collapse mt-3" id="filterPanel">
+                    <div class="filter-panel">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Category</label>
+                                <select class="form-control">
+                                    <option>All Categories</option>
+                                    <option>Web Development</option>
+                                    <option>Graphic Design</option>
+                                    <option>Content Writing</option>
+                                    <option>Digital Marketing</option>
+                                    <option>Mobile Development</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Experience Level</label>
+                                <select class="form-control">
+                                    <option>Any Experience</option>
+                                    <option>Entry Level (0-2 years)</option>
+                                    <option>Intermediate (2-5 years)</option>
+                                    <option>Expert (5+ years)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Hourly Rate</label>
+                                <select class="form-control">
+                                    <option>Any Rate</option>
+                                    <option>$5 - $25</option>
+                                    <option>$25 - $50</option>
+                                    <option>$50 - $100</option>
+                                    <option>$100+</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Availability</label>
+                                <select class="form-control">
+                                    <option>Any Availability</option>
+                                    <option>Available Now</option>
+                                    <option>Available This Week</option>
+                                    <option>Available Next Week</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Freelancers Grid -->
+    <section class="freelancers-grid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="results-header">
+                        <h3>Showing <span id="resultCount">24</span> freelancers</h3>
+                        <div class="sort-options">
+                            <label>Sort by:</label>
+                            <select class="form-control">
+                                <option>Relevance</option>
+                                <option>Rating</option>
+                                <option>Hourly Rate (Low to High)</option>
+                                <option>Hourly Rate (High to Low)</option>
+                                <option>Experience</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4" id="freelancersContainer">
+                <!-- Freelancer Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="freelancer-card">
+                        <div class="card-header">
+                            <div class="freelancer-avatar">
+                                <img src="../assets/images/men1.jpeg" alt="Freelancer">
+                                <div class="online-status online"></div>
+                            </div>
+                            <div class="freelancer-info">
+                                <h4>Nimal Perera</h4>
+                                <p class="title">Full Stack Developer</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>5.0 (127 reviews)</span>
+                                </div>
+                            </div>
+                            <div class="hourly-rate">
+                                <span class="rate">$45</span>
+                                <span class="period">/hr</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <p class="description">Experienced full-stack developer with 5+ years in React, Node.js, and Python. Specialized in building scalable web applications and APIs.</p>
+                            
+                            <div class="skills">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">AWS</span>
+                            </div>
+                            
+                            <div class="stats">
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span>98% On Time</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>$12k+ Earned</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>50+ Projects</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <button class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-eye"></i> View Profile
+                            </button>
+                            <button class="btn btn-success btn-sm">
+                                <i class="fas fa-paper-plane"></i> Hire Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Freelancer Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="freelancer-card">
+                        <div class="card-header">
+                            <div class="freelancer-avatar">
+                                <img src="../assets/images/girl.jpeg" alt="Freelancer">
+                                <div class="online-status online"></div>
+                            </div>
+                            <div class="freelancer-info">
+                                <h4>Kumari Silva</h4>
+                                <p class="title">Graphic Designer</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.9 (89 reviews)</span>
+                                </div>
+                            </div>
+                            <div class="hourly-rate">
+                                <span class="rate">$35</span>
+                                <span class="period">/hr</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <p class="description">Creative graphic designer specializing in brand identity, logo design, and marketing materials. Passionate about creating visually stunning designs.</p>
+                            
+                            <div class="skills">
+                                <span class="skill-tag">Photoshop</span>
+                                <span class="skill-tag">Illustrator</span>
+                                <span class="skill-tag">InDesign</span>
+                                <span class="skill-tag">Branding</span>
+                                <span class="skill-tag">UI/UX</span>
+                            </div>
+                            
+                            <div class="stats">
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span>100% On Time</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>$8k+ Earned</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>35+ Projects</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <button class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-eye"></i> View Profile
+                            </button>
+                            <button class="btn btn-success btn-sm">
+                                <i class="fas fa-paper-plane"></i> Hire Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Freelancer Card 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="freelancer-card">
+                        <div class="card-header">
+                            <div class="freelancer-avatar">
+                                <img src="../assets/images/men.jpeg" alt="Freelancer">
+                                <div class="online-status offline"></div>
+                            </div>
+                            <div class="freelancer-info">
+                                <h4>Rajith Fernando</h4>
+                                <p class="title">Content Writer</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.8 (156 reviews)</span>
+                                </div>
+                            </div>
+                            <div class="hourly-rate">
+                                <span class="rate">$25</span>
+                                <span class="period">/hr</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <p class="description">Professional content writer with expertise in SEO, blog writing, and copywriting. Creating engaging content that drives results.</p>
+                            
+                            <div class="skills">
+                                <span class="skill-tag">SEO Writing</span>
+                                <span class="skill-tag">Blog Posts</span>
+                                <span class="skill-tag">Copywriting</span>
+                                <span class="skill-tag">Technical Writing</span>
+                                <span class="skill-tag">Editing</span>
+                            </div>
+                            
+                            <div class="stats">
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span>95% On Time</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>$15k+ Earned</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>80+ Projects</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <button class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-eye"></i> View Profile
+                            </button>
+                            <button class="btn btn-success btn-sm">
+                                <i class="fas fa-paper-plane"></i> Hire Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Freelancer Cards... -->
+                <!-- Add more cards as needed -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="Freelancers pagination">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="../assets/Logos/logo.png" width="120px" alt="Hierly Logo" class="mb-3">
+                    <p>Connecting talented Sri Lankan freelancers with clients worldwide. Quality work, fair prices, and reliable service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="#">Content Writing</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2">
+                    <h5>Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2">
+                    <h5>For Freelancers</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Become a Freelancer</a></li>
+                        <li><a href="#">Create Portfolio</a></li>
+                        <li><a href="#">Find Projects</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Hierly. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Made with ❤️ in Sri Lanka</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/MainPage.js"></script>
+    <script src="../js/freelancers.js"></script>
+</body>
+</html> 
