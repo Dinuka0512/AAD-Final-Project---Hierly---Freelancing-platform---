@@ -1,0 +1,829 @@
+2025-09-04T07:23:10.219+05:30  INFO 14360 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Starting BackEndApplication using Java 21.0.6 with PID 14360 (C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---\Back_End\target\classes started by Welcome in C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---)
+2025-09-04T07:23:10.222+05:30  INFO 14360 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-09-04T07:23:10.897+05:30  INFO 14360 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-04T07:23:10.920+05:30  INFO 14360 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2025-09-04T07:23:11.350+05:30  INFO 14360 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-04T07:23:11.362+05:30  INFO 14360 --- [Back_End] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-04T07:23:11.364+05:30  INFO 14360 --- [Back_End] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-04T07:23:11.409+05:30  INFO 14360 --- [Back_End] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-04T07:23:11.409+05:30  INFO 14360 --- [Back_End] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1138 ms
+2025-09-04T07:23:11.622+05:30  INFO 14360 --- [Back_End] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-04T07:23:11.686+05:30  INFO 14360 --- [Back_End] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-04T07:23:11.724+05:30  INFO 14360 --- [Back_End] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-04T07:23:12.055+05:30  INFO 14360 --- [Back_End] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-04T07:23:12.088+05:30  INFO 14360 --- [Back_End] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-04T07:23:13.713+05:30  WARN 14360 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1045, SQLState: 28000
+2025-09-04T07:23:13.715+05:30 ERROR 14360 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'root'@'localhost' (using password: YES)
+2025-09-04T07:23:13.719+05:30  WARN 14360 --- [Back_End] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:334) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at com.hierly.back_end.BackEndApplication.main(BackEndApplication.java:9) ~[classes/:na]
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.2.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:485) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	... 35 common frames omitted
+
+2025-09-04T07:23:13.750+05:30  WARN 14360 --- [Back_End] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-04T07:23:13.765+05:30  INFO 14360 --- [Back_End] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-04T07:23:14.199+05:30  INFO 14360 --- [Back_End] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-04T07:23:14.206+05:30  INFO 14360 --- [Back_End] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:23:14.252+05:30  WARN 14360 --- [Back_End] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-04T07:23:14.752+05:30  WARN 14360 --- [Back_End] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 880fc59b-0144-47c7-ae81-99f38f9d7c84
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-04T07:23:14.760+05:30  INFO 14360 --- [Back_End] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-04T07:23:14.927+05:30  INFO 14360 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-04T07:23:14.934+05:30  INFO 14360 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Started BackEndApplication in 5.292 seconds (process running for 6.073)
+2025-09-04T07:23:49.236+05:30  INFO 14360 --- [Back_End] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-04T07:23:49.247+05:30  INFO 14360 --- [Back_End] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-04T07:23:49.253+05:30  INFO 14360 --- [Back_End] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:24:06.257+05:30  INFO 12652 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Starting BackEndApplication using Java 21.0.6 with PID 12652 (C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---\Back_End\target\classes started by Welcome in C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---)
+2025-09-04T07:24:06.260+05:30  INFO 12652 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-09-04T07:24:06.954+05:30  INFO 12652 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-04T07:24:06.981+05:30  INFO 12652 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2025-09-04T07:24:07.412+05:30  INFO 12652 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-04T07:24:07.425+05:30  INFO 12652 --- [Back_End] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-04T07:24:07.426+05:30  INFO 12652 --- [Back_End] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-04T07:24:07.473+05:30  INFO 12652 --- [Back_End] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-04T07:24:07.473+05:30  INFO 12652 --- [Back_End] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1164 ms
+2025-09-04T07:24:07.631+05:30  INFO 12652 --- [Back_End] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-04T07:24:07.701+05:30  INFO 12652 --- [Back_End] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-04T07:24:07.735+05:30  INFO 12652 --- [Back_End] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-04T07:24:08.025+05:30  INFO 12652 --- [Back_End] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-04T07:24:08.053+05:30  INFO 12652 --- [Back_End] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-04T07:24:09.671+05:30  WARN 12652 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1045, SQLState: 28000
+2025-09-04T07:24:09.672+05:30 ERROR 12652 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'root'@'localhost' (using password: YES)
+2025-09-04T07:24:09.674+05:30  WARN 12652 --- [Back_End] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:334) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at com.hierly.back_end.BackEndApplication.main(BackEndApplication.java:9) ~[classes/:na]
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.2.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:485) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	... 35 common frames omitted
+
+2025-09-04T07:24:09.693+05:30  WARN 12652 --- [Back_End] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-04T07:24:09.703+05:30  INFO 12652 --- [Back_End] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-04T07:24:10.060+05:30  INFO 12652 --- [Back_End] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-04T07:24:10.066+05:30  INFO 12652 --- [Back_End] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:24:10.115+05:30  WARN 12652 --- [Back_End] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-04T07:24:10.493+05:30  WARN 12652 --- [Back_End] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 83f688a1-760f-4a30-8f19-d66fe68b04f5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-04T07:24:10.499+05:30  INFO 12652 --- [Back_End] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-04T07:24:10.656+05:30  INFO 12652 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-04T07:24:10.664+05:30  INFO 12652 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Started BackEndApplication in 4.993 seconds (process running for 5.788)
+2025-09-04T07:25:42.821+05:30  INFO 12652 --- [Back_End] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-04T07:25:42.821+05:30  INFO 12652 --- [Back_End] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-04T07:25:42.822+05:30  INFO 12652 --- [Back_End] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-04T07:38:10.236+05:30  INFO 12652 --- [Back_End] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-04T07:38:10.251+05:30  INFO 12652 --- [Back_End] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-04T07:38:10.257+05:30  INFO 12652 --- [Back_End] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:38:44.489+05:30  INFO 9988 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Starting BackEndApplication using Java 21.0.6 with PID 9988 (C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---\Back_End\target\classes started by Welcome in C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---)
+2025-09-04T07:38:44.491+05:30  INFO 9988 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-09-04T07:38:45.566+05:30  INFO 9988 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-04T07:38:45.588+05:30  INFO 9988 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+2025-09-04T07:38:46.204+05:30  INFO 9988 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-04T07:38:46.218+05:30  INFO 9988 --- [Back_End] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-04T07:38:46.218+05:30  INFO 9988 --- [Back_End] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-04T07:38:46.277+05:30  INFO 9988 --- [Back_End] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-04T07:38:46.279+05:30  INFO 9988 --- [Back_End] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1724 ms
+2025-09-04T07:38:46.509+05:30  INFO 9988 --- [Back_End] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-04T07:38:46.570+05:30  INFO 9988 --- [Back_End] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-04T07:38:46.607+05:30  INFO 9988 --- [Back_End] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-04T07:38:46.953+05:30  INFO 9988 --- [Back_End] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-04T07:38:46.992+05:30  INFO 9988 --- [Back_End] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-04T07:38:48.646+05:30  WARN 9988 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1045, SQLState: 28000
+2025-09-04T07:38:48.646+05:30 ERROR 9988 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'root'@'localhost' (using password: YES)
+2025-09-04T07:38:48.648+05:30  WARN 9988 --- [Back_End] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:334) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at com.hierly.back_end.BackEndApplication.main(BackEndApplication.java:9) ~[classes/:na]
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.2.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:485) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	... 35 common frames omitted
+
+2025-09-04T07:38:48.671+05:30  WARN 9988 --- [Back_End] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-04T07:38:48.683+05:30  INFO 9988 --- [Back_End] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-04T07:38:49.457+05:30  INFO 9988 --- [Back_End] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-04T07:38:49.527+05:30  INFO 9988 --- [Back_End] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:38:49.796+05:30  WARN 9988 --- [Back_End] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-04T07:38:50.031+05:30  WARN 9988 --- [Back_End] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7b66031f-a5b4-4daa-8edd-c3a0ce5cdb54
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-04T07:38:50.040+05:30  INFO 9988 --- [Back_End] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-04T07:38:50.583+05:30  INFO 9988 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-04T07:38:50.590+05:30  INFO 9988 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Started BackEndApplication in 6.907 seconds (process running for 8.04)
+2025-09-04T07:39:02.365+05:30  INFO 9988 --- [Back_End] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-04T07:39:02.366+05:30  INFO 9988 --- [Back_End] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-04T07:39:02.367+05:30  INFO 9988 --- [Back_End] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-04T07:41:02.389+05:30  INFO 9988 --- [Back_End] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-04T07:41:02.403+05:30  INFO 9988 --- [Back_End] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-04T07:41:02.409+05:30  INFO 9988 --- [Back_End] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:41:08.245+05:30  INFO 9788 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Starting BackEndApplication using Java 21.0.6 with PID 9788 (C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---\Back_End\target\classes started by Welcome in C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---)
+2025-09-04T07:41:08.248+05:30  INFO 9788 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-09-04T07:41:09.175+05:30  INFO 9788 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-04T07:41:09.202+05:30  INFO 9788 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2025-09-04T07:41:09.887+05:30  INFO 9788 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-04T07:41:09.913+05:30  INFO 9788 --- [Back_End] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-04T07:41:09.914+05:30  INFO 9788 --- [Back_End] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-04T07:41:09.984+05:30  INFO 9788 --- [Back_End] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-04T07:41:09.984+05:30  INFO 9788 --- [Back_End] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1671 ms
+2025-09-04T07:41:10.209+05:30  INFO 9788 --- [Back_End] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-04T07:41:10.271+05:30  INFO 9788 --- [Back_End] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-04T07:41:10.313+05:30  INFO 9788 --- [Back_End] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-04T07:41:10.666+05:30  INFO 9788 --- [Back_End] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-04T07:41:10.698+05:30  INFO 9788 --- [Back_End] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-04T07:41:12.369+05:30  WARN 9788 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1045, SQLState: 28000
+2025-09-04T07:41:12.370+05:30 ERROR 9788 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'root'@'localhost' (using password: YES)
+2025-09-04T07:41:12.373+05:30  WARN 9788 --- [Back_End] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:334) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at com.hierly.back_end.BackEndApplication.main(BackEndApplication.java:9) ~[classes/:na]
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.2.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:485) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	... 35 common frames omitted
+
+2025-09-04T07:41:12.409+05:30  WARN 9788 --- [Back_End] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-04T07:41:12.424+05:30  INFO 9788 --- [Back_End] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-04T07:41:12.828+05:30  INFO 9788 --- [Back_End] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-04T07:41:12.834+05:30  INFO 9788 --- [Back_End] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:41:12.893+05:30  WARN 9788 --- [Back_End] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-04T07:41:13.116+05:30  WARN 9788 --- [Back_End] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 07974e3b-c9c6-4193-b76c-434ab8c0fcbb
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-04T07:41:13.124+05:30  INFO 9788 --- [Back_End] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-04T07:41:13.528+05:30  INFO 9788 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-04T07:41:13.534+05:30  INFO 9788 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Started BackEndApplication in 6.11 seconds (process running for 7.174)
+2025-09-04T07:41:18.593+05:30  INFO 9788 --- [Back_End] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-04T07:41:18.595+05:30  INFO 9788 --- [Back_End] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-04T07:41:18.596+05:30  INFO 9788 --- [Back_End] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-04T07:42:00.467+05:30  INFO 9788 --- [Back_End] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-04T07:42:00.481+05:30  INFO 9788 --- [Back_End] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-04T07:42:00.487+05:30  INFO 9788 --- [Back_End] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:42:06.241+05:30  INFO 7216 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Starting BackEndApplication using Java 21.0.6 with PID 7216 (C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---\Back_End\target\classes started by Welcome in C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---)
+2025-09-04T07:42:06.246+05:30  INFO 7216 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-09-04T07:42:07.193+05:30  INFO 7216 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-04T07:42:07.216+05:30  INFO 7216 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+2025-09-04T07:42:07.864+05:30  INFO 7216 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-04T07:42:07.881+05:30  INFO 7216 --- [Back_End] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-04T07:42:07.881+05:30  INFO 7216 --- [Back_End] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-04T07:42:07.948+05:30  INFO 7216 --- [Back_End] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-04T07:42:07.948+05:30  INFO 7216 --- [Back_End] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1643 ms
+2025-09-04T07:42:08.221+05:30  INFO 7216 --- [Back_End] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-04T07:42:08.286+05:30  INFO 7216 --- [Back_End] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-04T07:42:08.329+05:30  INFO 7216 --- [Back_End] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-04T07:42:08.929+05:30  INFO 7216 --- [Back_End] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-04T07:42:08.967+05:30  INFO 7216 --- [Back_End] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-04T07:42:10.732+05:30  WARN 7216 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1045, SQLState: 28000
+2025-09-04T07:42:10.733+05:30 ERROR 7216 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'root'@'localhost' (using password: YES)
+2025-09-04T07:42:10.735+05:30  WARN 7216 --- [Back_End] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:334) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at com.hierly.back_end.BackEndApplication.main(BackEndApplication.java:9) ~[classes/:na]
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.2.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:485) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	... 35 common frames omitted
+
+2025-09-04T07:42:10.758+05:30  WARN 7216 --- [Back_End] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-04T07:42:10.773+05:30  INFO 7216 --- [Back_End] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-04T07:42:11.345+05:30  INFO 7216 --- [Back_End] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-04T07:42:11.355+05:30  INFO 7216 --- [Back_End] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:42:11.440+05:30  WARN 7216 --- [Back_End] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-04T07:42:11.697+05:30  WARN 7216 --- [Back_End] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ddcd7970-ef91-4252-99da-0d2972396f5f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-04T07:42:11.707+05:30  INFO 7216 --- [Back_End] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-04T07:42:12.223+05:30  INFO 7216 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-04T07:42:12.233+05:30  INFO 7216 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Started BackEndApplication in 6.83 seconds (process running for 7.955)
+2025-09-04T07:42:18.556+05:30  INFO 7216 --- [Back_End] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-04T07:42:18.556+05:30  INFO 7216 --- [Back_End] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-04T07:42:18.558+05:30  INFO 7216 --- [Back_End] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-09-04T07:45:28.939+05:30  INFO 7216 --- [Back_End] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-04T07:45:28.950+05:30  INFO 7216 --- [Back_End] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-04T07:45:28.958+05:30  INFO 7216 --- [Back_End] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:45:33.557+05:30  INFO 5752 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Starting BackEndApplication using Java 21.0.6 with PID 5752 (C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---\Back_End\target\classes started by Welcome in C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---)
+2025-09-04T07:45:33.559+05:30  INFO 5752 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-09-04T07:45:34.273+05:30  INFO 5752 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-04T07:45:34.295+05:30  INFO 5752 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+2025-09-04T07:45:34.784+05:30  INFO 5752 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-04T07:45:34.798+05:30  INFO 5752 --- [Back_End] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-04T07:45:34.798+05:30  INFO 5752 --- [Back_End] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-04T07:45:34.860+05:30  INFO 5752 --- [Back_End] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-04T07:45:34.861+05:30  INFO 5752 --- [Back_End] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1255 ms
+2025-09-04T07:45:35.031+05:30  INFO 5752 --- [Back_End] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-04T07:45:35.083+05:30  INFO 5752 --- [Back_End] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-04T07:45:35.115+05:30  INFO 5752 --- [Back_End] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-04T07:45:35.411+05:30  INFO 5752 --- [Back_End] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-04T07:45:35.439+05:30  INFO 5752 --- [Back_End] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-04T07:45:37.029+05:30  WARN 5752 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1045, SQLState: 28000
+2025-09-04T07:45:37.030+05:30 ERROR 5752 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'root'@'localhost' (using password: YES)
+2025-09-04T07:45:37.031+05:30  WARN 5752 --- [Back_End] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:334) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at com.hierly.back_end.BackEndApplication.main(BackEndApplication.java:9) ~[classes/:na]
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.2.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:485) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	... 35 common frames omitted
+
+2025-09-04T07:45:37.051+05:30  WARN 5752 --- [Back_End] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-04T07:45:37.065+05:30  INFO 5752 --- [Back_End] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-04T07:45:37.423+05:30  INFO 5752 --- [Back_End] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-04T07:45:37.429+05:30  INFO 5752 --- [Back_End] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:45:37.480+05:30  WARN 5752 --- [Back_End] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-04T07:45:37.657+05:30  WARN 5752 --- [Back_End] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 61484d55-e87a-45c1-904c-790030d39707
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-04T07:45:37.664+05:30  INFO 5752 --- [Back_End] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-04T07:45:38.008+05:30  INFO 5752 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-04T07:45:38.015+05:30  INFO 5752 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Started BackEndApplication in 5.074 seconds (process running for 5.808)
+2025-09-04T07:45:44.396+05:30  INFO 5752 --- [Back_End] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-04T07:45:44.396+05:30  INFO 5752 --- [Back_End] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-04T07:45:44.397+05:30  INFO 5752 --- [Back_End] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-04T07:50:27.284+05:30  INFO 5752 --- [Back_End] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-04T07:50:27.296+05:30  INFO 5752 --- [Back_End] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-04T07:50:27.304+05:30  INFO 5752 --- [Back_End] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:50:32.196+05:30  INFO 6712 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Starting BackEndApplication using Java 21.0.6 with PID 6712 (C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---\Back_End\target\classes started by Welcome in C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---)
+2025-09-04T07:50:32.199+05:30  INFO 6712 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-09-04T07:50:33.074+05:30  INFO 6712 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-04T07:50:33.095+05:30  INFO 6712 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+2025-09-04T07:50:33.784+05:30  INFO 6712 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-04T07:50:33.798+05:30  INFO 6712 --- [Back_End] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-04T07:50:33.798+05:30  INFO 6712 --- [Back_End] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-04T07:50:33.854+05:30  INFO 6712 --- [Back_End] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-04T07:50:33.855+05:30  INFO 6712 --- [Back_End] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1599 ms
+2025-09-04T07:50:34.040+05:30  INFO 6712 --- [Back_End] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-04T07:50:34.107+05:30  INFO 6712 --- [Back_End] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-04T07:50:34.146+05:30  INFO 6712 --- [Back_End] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-04T07:50:34.467+05:30  INFO 6712 --- [Back_End] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-04T07:50:34.498+05:30  INFO 6712 --- [Back_End] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-04T07:50:36.105+05:30  WARN 6712 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1045, SQLState: 28000
+2025-09-04T07:50:36.106+05:30 ERROR 6712 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'root'@'localhost' (using password: YES)
+2025-09-04T07:50:36.110+05:30  WARN 6712 --- [Back_End] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:334) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at com.hierly.back_end.BackEndApplication.main(BackEndApplication.java:9) ~[classes/:na]
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.2.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:485) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	... 35 common frames omitted
+
+2025-09-04T07:50:36.142+05:30  WARN 6712 --- [Back_End] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-04T07:50:36.155+05:30  INFO 6712 --- [Back_End] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-04T07:50:36.531+05:30  INFO 6712 --- [Back_End] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-04T07:50:36.537+05:30  INFO 6712 --- [Back_End] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:50:36.595+05:30  WARN 6712 --- [Back_End] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-04T07:50:36.786+05:30  WARN 6712 --- [Back_End] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 40f3f242-959c-4308-9b51-e90a60d3f3b5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-04T07:50:36.793+05:30  INFO 6712 --- [Back_End] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-04T07:50:37.186+05:30  INFO 6712 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-04T07:50:37.195+05:30  INFO 6712 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Started BackEndApplication in 5.649 seconds (process running for 6.499)
+2025-09-04T07:50:50.611+05:30  INFO 6712 --- [Back_End] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-04T07:50:50.611+05:30  INFO 6712 --- [Back_End] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-04T07:50:50.613+05:30  INFO 6712 --- [Back_End] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-09-04T07:52:31.417+05:30  INFO 6712 --- [Back_End] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-04T07:52:31.429+05:30  INFO 6712 --- [Back_End] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-04T07:52:31.437+05:30  INFO 6712 --- [Back_End] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:52:37.971+05:30  INFO 10608 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Starting BackEndApplication using Java 21.0.6 with PID 10608 (C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---\Back_End\target\classes started by Welcome in C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---)
+2025-09-04T07:52:37.973+05:30  INFO 10608 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-09-04T07:52:38.918+05:30  INFO 10608 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-04T07:52:38.945+05:30  INFO 10608 --- [Back_End] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 JPA repository interfaces.
+2025-09-04T07:52:39.531+05:30  INFO 10608 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-04T07:52:39.544+05:30  INFO 10608 --- [Back_End] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-04T07:52:39.545+05:30  INFO 10608 --- [Back_End] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-04T07:52:39.622+05:30  INFO 10608 --- [Back_End] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-04T07:52:39.622+05:30  INFO 10608 --- [Back_End] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1578 ms
+2025-09-04T07:52:39.828+05:30  INFO 10608 --- [Back_End] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-04T07:52:39.888+05:30  INFO 10608 --- [Back_End] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-04T07:52:39.932+05:30  INFO 10608 --- [Back_End] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-04T07:52:40.286+05:30  INFO 10608 --- [Back_End] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-04T07:52:40.319+05:30  INFO 10608 --- [Back_End] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-04T07:52:42.011+05:30  WARN 10608 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1045, SQLState: 28000
+2025-09-04T07:52:42.013+05:30 ERROR 10608 --- [Back_End] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'root'@'localhost' (using password: YES)
+2025-09-04T07:52:42.015+05:30  WARN 10608 --- [Back_End] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:334) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at com.hierly.back_end.BackEndApplication.main(BackEndApplication.java:9) ~[classes/:na]
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.2.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:485) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	... 35 common frames omitted
+
+2025-09-04T07:52:42.048+05:30  WARN 10608 --- [Back_End] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-04T07:52:42.064+05:30  INFO 10608 --- [Back_End] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-04T07:52:42.534+05:30  INFO 10608 --- [Back_End] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-04T07:52:42.539+05:30  INFO 10608 --- [Back_End] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-04T07:52:42.614+05:30  WARN 10608 --- [Back_End] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-04T07:52:42.848+05:30  WARN 10608 --- [Back_End] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 30da5409-40f7-495b-8da1-a897ccf53880
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-04T07:52:42.856+05:30  INFO 10608 --- [Back_End] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-04T07:52:43.313+05:30  INFO 10608 --- [Back_End] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-04T07:52:43.321+05:30  INFO 10608 --- [Back_End] [main] com.hierly.back_end.BackEndApplication   : Started BackEndApplication in 6.214 seconds (process running for 7.123)
+2025-09-04T07:52:47.896+05:30  INFO 10608 --- [Back_End] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-04T07:52:47.897+05:30  INFO 10608 --- [Back_End] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-04T07:52:47.900+05:30  INFO 10608 --- [Back_End] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-09-04T07:55:48.464+05:30  INFO 10608 --- [Back_End] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-04T07:55:48.474+05:30  INFO 10608 --- [Back_End] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-04T07:55:48.478+05:30  INFO 10608 --- [Back_End] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
