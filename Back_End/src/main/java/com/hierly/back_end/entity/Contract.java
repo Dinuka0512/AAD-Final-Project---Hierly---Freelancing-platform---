@@ -2,8 +2,7 @@ package com.hierly.back_end.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,15 +13,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Job {
+public class Contract {
     @Id
     private String id;
-    private  String title;
-    private  String description;
-    private  String status;
-    private double budget;
+    private double amount;
+    private String startDate;
+    private String status;
 
-    @ManyToOne
-    private User user;
-    //Role - USER can add Jobs
+    @OneToOne
+    private Bid bid;
 }
