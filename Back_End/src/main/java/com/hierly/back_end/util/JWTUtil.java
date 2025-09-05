@@ -25,32 +25,29 @@ public class JWTUtil {
 
     public String generateJWTToken(String userName) {
         return Jwts.builder()
-                .subject(userName)
-                .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60)) //Expiration after 1 hour
+                .setSubject(userName)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60)) //Expiration after 1 hour
                 .signWith(secretKey)
                 .compact();
     }
 
     public String getUserFromJWTToken(String jwtToken) {
-        return Jwts
-                .parser()
-                .verifyWith(secretKey).build()
-                .parseSignedClaims(jwtToken)
-                .getPayload().getSubject();
+        return Jwts.parserBuilder()
+                .setSigningKey(secretKey)   // provide your key
+                .build()
+                .parseClaimsJws(jwtToken)   // parse and validate
+                .getBody()
+                .getSubject();
     }
 
     public boolean validateToken(String token) {
         try {
-            // Parse the token and verify signature with secret key
-            Claims claims = Jwts.parser()
+            Jwts.parserBuilder()
                     .setSigningKey(secretKey)
-                    .parseClaimsJws(token)
-                    .getBody();
-
-            // ✅ Check expiration date
-            Date expiration = claims.getExpiration();
-            return expiration.after(new Date());
+                    .build()
+                    .parseClaimsJws(token);
+            return true;
 
         } catch (ExpiredJwtException e) {
             System.out.println("Token expired");
