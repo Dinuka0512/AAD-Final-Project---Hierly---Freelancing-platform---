@@ -13,17 +13,16 @@ export default class Validation {
     }
 
     // Validate strong password
-    // (Min 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special char)
     static isStrongPassword(value) {
         if (!this.isNotNull(value)) return false;
-        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        const regex =  /^(?=.*[a-zA-Z])(?=.*\d).{6,}$/;
         return regex.test(value);
     }
 
     // Validate username (letters, numbers, underscore, 3–20 chars)
     static isValidUserName(value) {
         if (!this.isNotNull(value)) return false;
-        const regex = /^[a-zA-Z0-9_]{3,20}$/;
+        const regex = /^[A-Za-z]{3,20}$/;
         return regex.test(value);
     }
 
