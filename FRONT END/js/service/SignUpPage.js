@@ -72,9 +72,24 @@ btnSignUp.on("click", function (e) {
 
     console.log(user);
 
-    Swal.fire({
-        icon: 'success',
-        title: 'Signup Successful',
-        text: 'User object created! Check console for details.'
+    $.ajax({
+        type: "POST",
+        url: "",
+        contentType: "application/json",
+        data: JSON.stringify(user),
+        success: function (data) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Signup Successful',
+                text: 'User object created! Check console for details.'
+            });
+        },
+        error: function (data) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Signup Failed',
+                text: xhr.responseJSON?.message || "Something went wrong!"
+            });
+        }
     });
 });
