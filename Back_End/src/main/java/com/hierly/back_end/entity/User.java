@@ -18,13 +18,14 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-public class User implements UserDetails {
+public class User {
     @Id
     private String id;
     private String name;
     private String email;
     private String password;
     private String role;
+
     private String profilePicture;
 
     //FREELANCER
@@ -34,44 +35,11 @@ public class User implements UserDetails {
     private String ratings;
     private String skills;
 
-    public User(String id, String name, String email, String password, String role, String profilePicture) {
+    public User(String id, String name, String email, String password, String role) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.role = role;
-        this.profilePicture = profilePicture;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        Set<GrantedAuthority> grantedAuthoritySet = new HashSet<>();
-        grantedAuthoritySet.add(new SimpleGrantedAuthority("ROLE_"+role));
-        return grantedAuthoritySet;
-    }
-
-    @Override
-    public String getUsername() {
-        return email;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
     }
 }
