@@ -1,63 +1,53 @@
 package com.hierly.back_end.util;
 
 import io.jsonwebtoken.*;
+import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import io.jsonwebtoken.security.SignatureException;
 import org.apache.catalina.security.SecurityConfig;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
+import java.security.Key;
 import java.util.Date;
 
 @Component
 public class JWTUtil {
-    private final SecretKey secretKey;
+    @Value("${jwt.secret}") private String secret;
+    @Value("${jwt.exp.minutes}") private long expMinutes;
 
-    public JWTUtil() {
-        try {
-            SecretKey key = KeyGenerator.getInstance("HmacSHA256").generateKey();
-            this.secretKey = Keys.hmacShaKeyFor(key.getEncoded());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    private Key key() {
+        return Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
     }
 
-    public String generateJWTToken(String userName) {
+    public String generateToken(UserDetails user) {
+        long now = System.currentTimeMillis();
         return Jwts.builder()
-                .setSubject(userName)
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60)) //Expiration after 1 hour
-                .signWith(secretKey)
+                .setSubject(user.getUsername())
+                .setIssuedAt(new Date(now))
+                .setExpiration(new Date(now + expMinutes * 60_000))
+                .signWith(key(), SignatureAlgorithm.HS256)
                 .compact();
     }
 
-    public String getUserFromJWTToken(String jwtToken) {
-        return Jwts.parserBuilder()
-                .setSigningKey(secretKey)   // provide your key
-                .build()
-                .parseClaimsJws(jwtToken)   // parse and validate
-                .getBody()
-                .getSubject();
+    public String extractUsername(String token) {
+        return Jwts.parserBuilder().setSigningKey(key()).build()
+                .parseClaimsJws(token)
+                .getBody().getSubject();
     }
 
-    public boolean validateToken(String token) {
+    public boolean isValid(String token, UserDetails user) {
         try {
-            Jwts.parserBuilder()
-                    .setSigningKey(secretKey)
-                    .build()
-                    .parseClaimsJws(token);
-            return true;
-
-        } catch (ExpiredJwtException e) {
-            System.out.println("Token expired");
-        } catch (SignatureException e) {
-            System.out.println("Invalid signature");
-        } catch (MalformedJwtException e) {
-            System.out.println("Invalid token format");
-        } catch (Exception e) {
-            System.out.println("Token invalid: " + e.getMessage());
+            String username = extractUsername(token);
+            Date exp = Jwts.parserBuilder().setSigningKey(key()).build()
+                    .parseClaimsJws(token)
+                    .getBody().getExpiration();
+            return username.equals(user.getUsername()) && exp.after(new Date());
+        } catch (JwtException e) {
+            return false;
         }
-        return false;
     }
 }
