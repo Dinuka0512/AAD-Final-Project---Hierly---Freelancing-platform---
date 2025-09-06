@@ -67,14 +67,14 @@ btnSignUp.on("click", function (e) {
         name: txtFirstName.val() + " " + txtLastName.val(),
         email: txtEmail.val(),
         password: txtPassword.val(),
-        type: userType.val()
+        role: userType.val()
     };
 
     console.log(user);
 
     $.ajax({
         type: "POST",
-        url: "",
+        url: "http://localhost:8080/SignUp/User",
         contentType: "application/json",
         data: JSON.stringify(user),
         success: function (data) {
@@ -83,6 +83,8 @@ btnSignUp.on("click", function (e) {
                 title: 'Signup Successful',
                 text: 'User object created! Check console for details.'
             });
+
+            window.location.href = "login.html";
         },
         error: function (data) {
             Swal.fire({

@@ -26,12 +26,11 @@ public class UserDto {
     private String ratings;
     private String skills;
 
-    public UserDto(String id, String name, String email, String password, String role, String profilePicture) {
+    public UserDto(String id, String name, String email, String password, String role) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.role = role;
-        this.profilePicture = profilePicture;
     }
 }

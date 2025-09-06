@@ -13,7 +13,8 @@ import lombok.Setter;
 @Entity
 public class Payment {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private double amount;
     private String date;
 
