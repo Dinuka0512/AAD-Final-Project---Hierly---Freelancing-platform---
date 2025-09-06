@@ -8,5 +8,6 @@
         <option name="gradleJvm" value="#JAVA_HOME" />
       </GradleProjectSettings>
     </option>
+    <option name="offlineMode" value="true" />
   </component>
 </project>
