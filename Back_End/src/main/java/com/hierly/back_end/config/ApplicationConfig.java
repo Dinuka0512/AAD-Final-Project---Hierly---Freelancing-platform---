@@ -24,14 +24,18 @@ public class ApplicationConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         return username ->
-                userRepo.findByName(username)
+                userRepo.findByEmail(username)
                         .map(user ->
                                 new org.springframework.security
                                         .core.userdetails.User(
-                                        user.getName(),
+                                        user.getUsername(),
                                         user.getPassword(),
-                                        List.of(new SimpleGrantedAuthority("ROLE_"+ user.getRole()+ user.getName()))
-                                )).orElseThrow(()->new UsernameNotFoundException("User not found")
+                                        List.of(new SimpleGrantedAuthority
+                                                ("ROLE_"+user.getRole()
+                                                        .name()))
+                                )).orElseThrow(
+                                ()->new UsernameNotFoundException
+                                        ("User not found")
                         );
     }
 
