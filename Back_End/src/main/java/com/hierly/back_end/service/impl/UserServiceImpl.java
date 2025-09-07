@@ -18,4 +18,15 @@ public class UserServiceImpl implements UserService {
     public void saveUser(UserDto user) {
         userRepo.save(modelMapper.map(user, User.class));
     }
+
+    @Override
+    public boolean isEmailExist(String email) {
+        return userRepo.existsByEmail(email);
+    }
+
+    @Override
+    public UserDto getUserDetails(String email) {
+        User user = userRepo.findByEmail(email);
+        return (user==null)? null : modelMapper.map(user, UserDto.class);
+    }
 }
