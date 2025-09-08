@@ -10,6 +10,7 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
+
     @Value("${jwt.expiration}")
     private long expiration;
 
@@ -20,11 +21,11 @@ public class JwtUtil {
         return Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date
-                        (System.currentTimeMillis() + expiration))
-                .signWith(Keys.hmacShaKeyFor(secretKey.getBytes())
-                        , SignatureAlgorithm.HS256).compact();
+                .setExpiration(new Date(System.currentTimeMillis() + expiration))
+                .signWith(Keys.hmacShaKeyFor(secretKey.getBytes()), SignatureAlgorithm.HS256)
+                .compact();
     }
+
     public String extractUsername(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(Keys.hmacShaKeyFor(secretKey.getBytes()))
@@ -33,14 +34,16 @@ public class JwtUtil {
                 .getBody()
                 .getSubject();
     }
+
     public boolean validateToken(String token) {
         try {
-            Jwts.parserBuilder()
-                    .setSigningKey(Keys.hmacShaKeyFor
-                            (secretKey.getBytes()))
+            Date expirationDate = Jwts.parserBuilder()
+                    .setSigningKey(Keys.hmacShaKeyFor(secretKey.getBytes()))
                     .build()
-                    .parseClaimsJws(token);
-            return true;
+                    .parseClaimsJws(token)
+                    .getBody()
+                    .getExpiration();
+            return expirationDate.after(new Date());
         } catch (Exception e) {
             return false;
         }

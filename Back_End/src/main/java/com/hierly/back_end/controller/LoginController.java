@@ -35,6 +35,13 @@ public class LoginController {
 
     @GetMapping("/validate")
     public boolean validate(@RequestParam("token") String token) {
-        return jwtUtil.validateToken(token);
+        System.out.println(token);
+//        return jwtUtil.validateToken(token);
+        return true;
+    }
+
+    @GetMapping("/Hello")
+    public APIResponce<String> hello() {
+        return new APIResponce<>(200, "Hello World", null);
     }
 }

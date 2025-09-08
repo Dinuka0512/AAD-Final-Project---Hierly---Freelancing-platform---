@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto getUserDetails(String email) {
-        User user = userRepo.findByEmail(email);
+        User user = userRepo.findByEmail(email).get();
         return (user==null)? null : modelMapper.map(user, UserDto.class);
     }
 }
