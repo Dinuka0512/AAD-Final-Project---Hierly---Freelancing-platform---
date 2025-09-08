@@ -1,0 +1,62 @@
+/* Client Dashboard specific tweaks if needed */
+
+.header-actions { display: flex; gap: 0.5rem; }
+
+.projects-list .project-item { background: #404040; border-radius: 10px; padding: 0.75rem; margin-bottom: 0.75rem; }
+
+/* Increase main content padding for Client dashboard */
+.admin-main { padding: 2.5rem; }
+
+/* Post Project form tuning */
+#post .card-header { padding: 1.25rem 1.5rem; }
+#post .card-body { padding: 1.5rem; }
+#post .card-body form { width: 100%; max-width: 960px; margin: 0 auto; }
+#post .form-group { margin-bottom: 16px; }
+#post .form-group label { color: #ffffff; font-weight: 600; margin-bottom: 8px; display: block; }
+#post .form-control { width: 100%; background: #404040; border: 1px solid #555; color: #ffffff; border-radius: 10px; padding: 12px 14px; }
+#post .form-control::placeholder { color: #b0b0b0; }
+#post .form-control:focus { border-color: #28a745; box-shadow: 0 0 0 0.2rem rgba(40,167,69,0.25); }
+#post textarea.form-control { resize: vertical; min-height: 140px; }
+
+/* Grid layout for better alignment */
+#post #postProjectForm { display: grid; grid-template-columns: 1fr; gap: 16px; }
+#post #postProjectForm .btn { justify-self: start; padding: 12px 22px; }
+
+@media (max-width: 768px) {
+    #post #postProjectForm { grid-template-columns: 1fr; }
+    #post #postProjectForm .btn { justify-self: stretch; }
+    .admin-main { padding: 1rem; }
+    .navbar-brand img { width: 72px; }
+}
+
+/* Profile avatar - mirror freelancer styles */
+.avatar-uploader { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.avatar { width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 2px solid #28a745; flex-shrink: 0; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.avatar-actions { display: flex; gap: 0.5rem; align-items: center; }
+.hint { color: #b0b0b0; font-size: 0.85rem; margin: 0; }
+
+.btn-outline-primary { border: 1px solid #28a745; color: #28a745; background: transparent; }
+.btn-outline-primary:hover { background: #28a745; color: #fff; }
+
+/* File uploader styles */
+.file-uploader .file-actions { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+.file-list { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 10px; }
+.file-item { display: flex; align-items: center; justify-content: space-between; background: #404040; border: 1px solid #555; border-radius: 8px; padding: 8px 10px; }
+.file-item .meta { display: flex; align-items: center; gap: 10px; color: #e5e5e5; }
+.file-item .meta i { color: #28a745; }
+.file-item .actions { display: flex; align-items: center; gap: 8px; }
+.file-remove { background: transparent; border: 1px solid #dc3545; color: #dc3545; border-radius: 6px; padding: 6px 10px; cursor: pointer; }
+.file-remove:hover { background: #dc3545; color: #fff; }
+
+/* Profile section tuning */
+#profile .card-header { padding: 1.25rem 1.5rem; }
+#profile .card-body { padding: 1.5rem; }
+#profile #profileForm { width: 100%; max-width: 720px; margin: 0 auto; }
+#profile .form-group { margin-bottom: 16px; }
+#profile .form-group label { color: #ffffff; font-weight: 600; margin-bottom: 8px; display: block; }
+#profile .form-control { width: 100%; background: #404040; border: 1px solid #555; color: #ffffff; border-radius: 10px; padding: 12px 14px; }
+#profile .form-control::placeholder { color: #b0b0b0; }
+#profile .form-control:focus { border-color: #28a745; box-shadow: 0 0 0 0.2rem rgba(40,167,69,0.25); }
+
+

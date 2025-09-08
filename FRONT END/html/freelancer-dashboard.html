@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Dashboard - Hierly</title>
+    <link rel="icon" href="../assets/Favicons/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/freelancer-dashboard.css">
+    <meta name="robots" content="noindex">
+</head>
+<body>
+    <nav class="admin-navbar">
+        <div class="navbar-brand">
+            <button id="menuToggle" class="btn btn-outline-primary" aria-label="Toggle navigation">☰</button>
+            <img src="../assets/Logos/logo.png" width="100px" alt="Hierly Logo">
+            <span class="brand-text">Freelancer Panel</span>
+        </div>
+        
+        <div class="navbar-actions">
+            <div class="admin-profile">
+                <img src="../assets/Users/user.jpeg" alt="Freelancer" class="admin-avatar">
+                <div class="admin-info">
+                    <span class="admin-name" id="userName">Freelancer</span>
+                    <span class="admin-role">Freelancer</span>
+                </div>
+                <button class="btn btn-outline-primary" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a class="nav-link active" href="#" data-target="overview"><i class="fas fa-tachometer-alt"></i>Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-target="bids"><i class="fas fa-hand-holding-dollar"></i>My Bids</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-target="contracts"><i class="fas fa-file-contract"></i>Contracts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-target="payments"><i class="fas fa-wallet"></i>Payments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-target="profile"><i class="fas fa-user"></i>Profile</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <section class="section-header">
+                <h1>Freelancer Dashboard</h1>
+                <p>Manage your bids, contracts, and payments in one place.</p>
+            </section>
+
+            <section id="overview" class="content-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><span>💼</span></div>
+                        <div class="stat-content">
+                            <h3 id="statActiveBids">0</h3>
+                            <p>Active Bids</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><span>📄</span></div>
+                        <div class="stat-content">
+                            <h3 id="statContracts">0</h3>
+                            <p>Active Contracts</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><span>💸</span></div>
+                        <div class="stat-content">
+                            <h3 id="statEarnings">$0</h3>
+                            <p>Total Earnings</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-header">
+                        <h4>Recent Activity</h4>
+                    </div>
+                    <div class="activity-list" id="recentActivity"></div>
+                </div>
+            </section>
+
+            <section id="bids" class="content-section">
+                <div class="content-card">
+                    <div class="card-header">
+                        <h4>My Bids</h4>
+                        <div class="header-actions">
+                            <button class="btn btn-primary" id="refreshBids">Refresh</button>
+                        </div>
+                    </div>
+                    <div class="card-body" id="bidsList"></div>
+                </div>
+            </section>
+
+            <section id="contracts" class="content-section">
+                <div class="content-card">
+                    <div class="card-header">
+                        <h4>Contracts</h4>
+                    </div>
+                    <div class="card-body" id="contractsList"></div>
+                </div>
+            </section>
+
+            <section id="payments" class="content-section">
+                <div class="content-card">
+                    <div class="card-header">
+                        <h4>Payments</h4>
+                    </div>
+                    <div class="card-body" id="paymentsList"></div>
+                </div>
+            </section>
+
+            <section id="profile" class="content-section">
+                <div class="content-card">
+                    <div class="card-header">
+                        <h4>Profile</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="profileForm">
+                            <div class="avatar-uploader">
+                                <div class="avatar">
+                                    <img id="avatarPreview" src="../assets/Users/user.jpeg" alt="Profile picture">
+                                </div>
+                                <div class="avatar-actions">
+                                    <label for="avatarInput" class="btn btn-primary">Choose Image</label>
+                                    <input id="avatarInput" type="file" accept="image/*" style="display:none">
+                                    <button type="button" id="avatarReset" class="btn btn-outline-primary">Reset</button>
+                                </div>
+                                <p class="hint">PNG/JPG up to 2MB is recommended.</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="displayName">Display Name</label>
+                                <input type="text" id="displayName" class="form-control" placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="bio">Bio</label>
+                                <textarea id="bio" class="form-control" rows="4" placeholder="Tell clients about yourself"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../js/controller/freelancer-dashboard.js"></script>
+    <script>
+        (function(){
+            var toggle = document.getElementById('menuToggle');
+            var sidebar = document.querySelector('.admin-sidebar');
+            if (toggle && sidebar) {
+                toggle.addEventListener('click', function(){
+                    sidebar.classList.toggle('open');
+                });
+            }
+            var btn = document.getElementById('logoutBtn');
+            if (btn) {
+                btn.addEventListener('click', function(){
+                    try { localStorage.removeItem('key'); } catch(e) {}
+                    window.location.href = 'login.html';
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
+
+

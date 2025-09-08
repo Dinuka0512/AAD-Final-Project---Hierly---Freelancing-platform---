@@ -1,5 +1,6 @@
 package com.hierly.back_end.controller;
 
+import com.hierly.back_end.dto.UserDataDto;
 import com.hierly.back_end.dto.UserDto;
 import com.hierly.back_end.service.UserService;
 import com.hierly.back_end.util.APIResponce;
@@ -15,15 +16,14 @@ public class LoginController {
     private final JwtUtil jwtUtil;
 
     @PostMapping("/login")
-    public APIResponce<String> login(@RequestParam("email") String email,
-                                     @RequestParam("password") String password) {
-        if(userService.isEmailExist(email)){
+    public APIResponce<String> login(@RequestBody UserDataDto userDataDto) {
+        if(userService.isEmailExist(userDataDto.getEmail())){
             //email exist
-            UserDto user = userService.getUserDetails(email);
-            if(user.getPassword().equals(password)){
-                //Password Ok
-                String token = jwtUtil.generateToken(email);
-                return new APIResponce<>(200, "Success", token);
+            UserDto user = userService.getUserDetails(userDataDto.getEmail());
+            if(user.getPassword().equals(userDataDto.getPassword())){
+                //Password Ok - NOW GENERATE THE TOKEN USING THE EMAIL
+                String token = jwtUtil.generateToken(userDataDto.getEmail());
+                return new APIResponce<>(200, user.getRole() + " Login Success", token);
             }else{
                 return new APIResponce<>(500, "Error", "Invalid Credentials");
             }
@@ -31,17 +31,5 @@ public class LoginController {
             //email not found
             return new APIResponce<>(401, "Email Not Found", null);
         }
-    }
-
-    @GetMapping("/validate")
-    public boolean validate(@RequestParam("token") String token) {
-        System.out.println(token);
-//        return jwtUtil.validateToken(token);
-        return true;
-    }
-
-    @GetMapping("/Hello")
-    public APIResponce<String> hello() {
-        return new APIResponce<>(200, "Hello World", null);
     }
 }

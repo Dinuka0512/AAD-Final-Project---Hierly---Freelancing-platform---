@@ -23,17 +23,7 @@
                     <span class="admin-name">Admin User</span>
                     <span class="admin-role">Super Admin</span>
                 </div>
-                <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="MainPage.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-                    </ul>
-                </div>
+                <button class="btn btn-outline-primary" id="logoutBtn">Logout</button>
             </div>
         </div>
     </nav>
@@ -526,5 +516,16 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/controller/admin.js"></script>
+    <script>
+        (function(){
+            var btn = document.getElementById('logoutBtn');
+            if (btn) {
+                btn.addEventListener('click', function(){
+                    try { localStorage.removeItem('key'); } catch(e) {}
+                    window.location.href = 'login.html';
+                });
+            }
+        })();
+    </script>
 </body>
 </html> 
