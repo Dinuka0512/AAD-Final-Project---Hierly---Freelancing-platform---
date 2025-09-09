@@ -5,19 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9242349e-c56c-42c4-9078-daf78ac51f78" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/util/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/util/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONT END/html/forgot-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/html/forgot-password.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FRONT END/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/js/service/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/service/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONT END/js/service/FogotPasswordPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/service/FogotPasswordPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONT END/js/service/SignUpPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/service/SignUpPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,6 +50,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.BackEndApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -50,6 +60,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -76,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757387823225</updated>
-      <workItem from="1757387824816" duration="4100000" />
+      <workItem from="1757387824816" duration="12049000" />
     </task>
     <servers />
   </component>

@@ -74,7 +74,7 @@ btnSignUp.on("click", function (e) {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/SignUp/User",
+        url: "http://localhost:8080/User/SignUp",
         contentType: "application/json",
         data: JSON.stringify(user),
         success: function (data) {
