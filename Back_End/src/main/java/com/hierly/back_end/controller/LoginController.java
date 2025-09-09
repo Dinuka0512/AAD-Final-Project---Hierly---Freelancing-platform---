@@ -25,7 +25,7 @@ public class LoginController {
                 String token = jwtUtil.generateToken(userDataDto.getEmail());
                 return new APIResponce<>(200, user.getRole() + " Login Success", token);
             }else{
-                return new APIResponce<>(500, "Error", "Invalid Credentials");
+                return new APIResponce<>(500, "Error Invalid Credentials", "Invalid Credentials");
             }
         }else{
             //email not found
