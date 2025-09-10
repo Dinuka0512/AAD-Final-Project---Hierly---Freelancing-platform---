@@ -101,6 +101,7 @@ public class UserController {
 
     @PostMapping("/UpdatePassword")
     public APIResponce<Boolean> updatePassword(@RequestBody UserDataDto userDataDto) {
+        System.out.println(userDataDto.getPassword());
         boolean isUpdated = userService.updateUserPassword(userDataDto);
         return new APIResponce<>(200, "IS Updated : ", isUpdated);
     }

@@ -6,40 +6,37 @@ import java.security.Key;
 import java.util.Base64;
 
 public class PasswordEncryptor {
+    private static final String SECRET_KEY = "1234567890123456";
 
-    private static final String ALGO = "AES";
-    // AES needs a 16/24/32 byte key → here we use 16
-    private static final byte[] keyValue = "MySuperSecretKey".getBytes(); // 16 chars
-
-    // Encrypt plain password
-    public static String encrypt(String plainPassword) {
+    // 🔒 Encrypt method
+    public static String encrypt(String data) {
         try {
-            Key key = generateKey();
-            Cipher cipher = Cipher.getInstance(ALGO);
+            SecretKeySpec key = new SecretKeySpec(SECRET_KEY.getBytes(), "AES");
+            Cipher cipher = Cipher.getInstance("AES");
+
             cipher.init(Cipher.ENCRYPT_MODE, key);
-            byte[] encVal = cipher.doFinal(plainPassword.getBytes());
-            return Base64.getEncoder().encodeToString(encVal);
+            byte[] encryptedBytes = cipher.doFinal(data.getBytes());
+
+            return Base64.getEncoder().encodeToString(encryptedBytes);
         } catch (Exception e) {
-            throw new RuntimeException("Error while encrypting password", e);
+            e.printStackTrace();
+            return null;
         }
     }
 
-    // Decrypt back to original password
-    public static String decrypt(String encryptedPassword) {
+    // 🔓 Decrypt method
+    public static String decrypt(String encryptedData) {
         try {
-            Key key = generateKey();
-            Cipher cipher = Cipher.getInstance(ALGO);
-            cipher.init(Cipher.DECRYPT_MODE, key);
-            byte[] decodedValue = Base64.getDecoder().decode(encryptedPassword);
-            byte[] decValue = cipher.doFinal(decodedValue);
-            return new String(decValue);
-        } catch (Exception e) {
-            throw new RuntimeException("Error while decrypting password", e);
-        }
-    }
+            SecretKeySpec key = new SecretKeySpec(SECRET_KEY.getBytes(), "AES");
+            Cipher cipher = Cipher.getInstance("AES");
 
-    // Generate AES key
-    private static Key generateKey() {
-        return new SecretKeySpec(keyValue, ALGO);
+            cipher.init(Cipher.DECRYPT_MODE, key);
+            byte[] decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(encryptedData));
+
+            return new String(decryptedBytes);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

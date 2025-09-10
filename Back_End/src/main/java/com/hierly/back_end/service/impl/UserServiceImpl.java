@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
 
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
-            user.setPassword(PasswordEncryptor.encrypt(user.getPassword()));
+            user.setPassword(PasswordEncryptor.encrypt(userDataDto.getPassword()));
 
             // Save updated user
             userRepo.save(user);
