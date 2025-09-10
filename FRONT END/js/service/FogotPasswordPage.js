@@ -8,16 +8,23 @@ sendOtp.on("click", function () {
 
     // Show loading spinner
     Swal.fire({
-        title: 'Checking user...',
+        title: 'Sending OTP...',
+        text: 'Please wait while we send the email.',
         allowOutsideClick: false,
         didOpen: () => {
             Swal.showLoading();
         }
     });
 
+    // Call backend
+    sendEmail();
+
+});
+
+function sendEmail(){
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/User/IsUserExist",
+        url: "http://localhost:8080/User/SendMail",
         dataType: "json",
         contentType: "application/json",
         data: txtEmail.val(),
@@ -25,27 +32,18 @@ sendOtp.on("click", function () {
             Swal.close();
             sendOtp.prop("disabled", false);
 
-            console.log(data);
-            if(data.data) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'User Found',
-                    text: 'OTP has been sent to your email.',
-                    showConfirmButton: true
-                });
-
-                //HERE NEED TO SEND THE GMAIL
-
-                window.location.href = "otp-verification.html";
-            }else{
-                Swal.fire({
-                    icon: 'error',
-                    title: 'User Not Found',
-                    text: 'Email is Not Found.'
-                });
-            }
-
-
+            // Show success/error alert
+            Swal.fire({
+                icon: data.data ? "success" : "error",
+                title: data.data ? "Mail Sent!" : "Mail Failed!",
+                text: data.data ? "OTP has been sent to your email." : "Something went wrong.",
+                confirmButtonText: "OK"
+            }).then(() => {
+                if (data.data) {
+                    // ✅ Navigate after pressing OK
+                    window.location.href = "otp-verification.html";
+                }
+            });
         },
         error: function (xhr) {
             Swal.close();
@@ -69,5 +67,5 @@ sendOtp.on("click", function () {
                 text: errorMsg
             });
         }
-    });
-});
+    })
+}
