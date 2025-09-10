@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9242349e-c56c-42c4-9078-daf78ac51f78" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/dto/OtpDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/entity/Otp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/repositry/OtpRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/OtpService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/OtpServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/util/PasswordEncryptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FRONT END/js/service/Otp-VerificationPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FRONT END/js/service/new-passwordPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b9e3242-0b1c-4803-ad42-bab436a8801d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0b9e3242-0b1c-4803-ad42-bab436a8801d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/html/new-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/html/new-password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/html/otp-verification.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/html/otp-verification.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/js/service/FogotPasswordPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/service/FogotPasswordPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONT END/js/service/Otp-VerificationPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/service/Otp-VerificationPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +93,7 @@
       <updated>1757387823225</updated>
       <workItem from="1757387824816" duration="13029000" />
       <workItem from="1757429059361" duration="19200000" />
-      <workItem from="1757484962185" duration="9160000" />
+      <workItem from="1757484962185" duration="9926000" />
     </task>
     <servers />
   </component>
