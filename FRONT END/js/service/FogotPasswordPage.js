@@ -21,7 +21,7 @@ sendOtp.on("click", function () {
 
 });
 
-function sendEmail(){
+function  sendEmail(){
     $.ajax({
         type: "POST",
         url: "http://localhost:8080/User/SendMail",
@@ -31,6 +31,10 @@ function sendEmail(){
         success: function (data) {
             Swal.close();
             sendOtp.prop("disabled", false);
+
+            if(data.data){
+                localStorage.setItem("email", txtEmail.val());
+            }
 
             // Show success/error alert
             Swal.fire({

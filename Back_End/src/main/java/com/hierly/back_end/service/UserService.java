@@ -1,5 +1,6 @@
 package com.hierly.back_end.service;
 
+import com.hierly.back_end.dto.UserDataDto;
 import com.hierly.back_end.dto.UserDto;
 
 public interface UserService {
@@ -8,4 +9,6 @@ public interface UserService {
     boolean isEmailExist(String email);
 
     UserDto getUserDetails(String email);
+
+    boolean updateUserPassword(UserDataDto userDataDto);
 }
