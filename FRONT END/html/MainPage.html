@@ -534,22 +534,22 @@
                         <form>
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="First Name" required>
+                                    <input type="text" class="form-control" placeholder="First Name" id="FirstName" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Last Name" required>
+                                    <input type="text" class="form-control" placeholder="Last Name" id="LastName" required>
                                 </div>
                                 <div class="col-12">
-                                    <input type="email" class="form-control" placeholder="Email Address" required>
+                                    <input type="email" class="form-control" placeholder="Email Address" id="Email" required>
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" class="form-control" placeholder="Subject" required>
+                                    <input type="text" class="form-control" placeholder="Subject" id="Subject" required>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                                    <textarea class="form-control" rows="5" placeholder="Your Message" id="Message" required></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-success btn-lg w-100">Send Message</button>
+                                    <button type="submit" class="btn btn-success btn-lg w-100" id="sendMessage">Send Message</button>
                                 </div>
                             </div>
                         </form>
@@ -630,6 +630,21 @@
 </footer>
 
 <script src="../js/jquery-3.7.1.min.js"></script>
+
+<!--EMAIL JS -->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "-LG-EyajmhQjBWNCv",
+        });
+    })();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../js/controller/MainPage.js"></script>
+<script src="../js/service/MainPageContactUs.js"></script>
 </body>
 </html>
