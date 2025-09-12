@@ -1,5 +1,5 @@
-2025-09-11T00:29:15.695+05:30  INFO 20644 --- [Back_End] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-11T00:29:15.710+05:30  INFO 20644 --- [Back_End] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-11T00:29:15.716+05:30  INFO 20644 --- [Back_End] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-11T00:29:15.719+05:30  INFO 20644 --- [Back_End] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-11T00:29:15.723+05:30  INFO 20644 --- [Back_End] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-13T00:04:54.084+05:30  INFO 8012 --- [Back_End] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-13T00:04:54.101+05:30  INFO 8012 --- [Back_End] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-13T00:04:54.109+05:30  INFO 8012 --- [Back_End] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-13T00:04:54.112+05:30  INFO 8012 --- [Back_End] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-13T00:04:54.123+05:30  INFO 8012 --- [Back_End] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

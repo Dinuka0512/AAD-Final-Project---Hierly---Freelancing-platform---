@@ -27,8 +27,11 @@ public class UserController {
 
     @PostMapping("/SignUp")
     public APIResponce<String>  signUp(@RequestBody UserDto user) {
-        userService.saveUser(user);
-        return new APIResponce<>(200, "Success", "User Saved Successfully!..");
+        boolean isUserSaved = userService.saveUser(user);
+        if(isUserSaved){
+            return new APIResponce<>(200, "Success", "User Saved Successfully!..");
+        }
+        return new APIResponce<>(500, "Error Saving User", "Error Saving User");
     }
 
     @PostMapping("/login")

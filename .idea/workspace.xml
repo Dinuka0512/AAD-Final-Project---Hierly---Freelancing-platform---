@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9242349e-c56c-42c4-9078-daf78ac51f78" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserTemplateController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FRONT END/js/service/FreelancerDashboardPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/dto/Other/ContactUsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FRONT END/html/freelancer-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/html/freelancer-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/js/controller/freelancer-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/controller/freelancer-dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONT END/js/service/SignUpPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/service/SignUpPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/application.log.2025-09-04.0.gz" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JavaScript File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -102,7 +108,7 @@
       <workItem from="1757387824816" duration="13029000" />
       <workItem from="1757429059361" duration="19200000" />
       <workItem from="1757484962185" duration="32247000" />
-      <workItem from="1757606062555" duration="1330000" />
+      <workItem from="1757606062555" duration="16808000" />
     </task>
     <servers />
   </component>

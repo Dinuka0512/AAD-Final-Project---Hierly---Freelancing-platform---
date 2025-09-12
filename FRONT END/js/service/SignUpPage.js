@@ -78,6 +78,16 @@ btnSignUp.on("click", function (e) {
         contentType: "application/json",
         data: JSON.stringify(user),
         success: function (data) {
+            if(data.status === 500){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Signup Failed',
+                    text: 'This Email Is Already Exist!'
+                });
+
+                return;
+            }
+
             Swal.fire({
                 icon: 'success',
                 title: 'Signup Successful',

@@ -6,6 +6,7 @@ import com.hierly.back_end.entity.User;
 import com.hierly.back_end.repositry.UserRepo;
 import com.hierly.back_end.service.UserService;
 import com.hierly.back_end.util.PasswordEncryptor;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -19,11 +20,14 @@ public class UserServiceImpl implements UserService {
     private final ModelMapper modelMapper;
 
     @Override
-    public void saveUser(UserDto user) {
+    @Transactional
+    public boolean saveUser(UserDto user) {
+        if(userRepo.existsByEmail(user.getEmail())) {
+            return false;
+        }
         user.setPassword(PasswordEncryptor.encrypt(user.getPassword()));
-
-        System.out.println(user);
         userRepo.save(modelMapper.map(user, User.class));
+        return true;
     }
 
     @Override
