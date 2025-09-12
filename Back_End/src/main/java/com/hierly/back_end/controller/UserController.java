@@ -1,6 +1,5 @@
 package com.hierly.back_end.controller;
 
-import com.hierly.back_end.dto.Other.ContactUsDto;
 import com.hierly.back_end.dto.UserDataDto;
 import com.hierly.back_end.dto.UserDto;
 import com.hierly.back_end.dto.OtpDto;

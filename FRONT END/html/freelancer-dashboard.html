@@ -116,56 +116,200 @@
                 <div class="content-card">
                     <div class="card-header">
                         <h4>Profile</h4>
+                        <button class="btn btn-outline-primary" id="editProfileBtn">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </button>
                     </div>
                     <div class="card-body">
-                        <form id="profileForm">
-                            <div class="avatar-uploader">
-                                <div class="avatar">
-                                    <img id="avatarPreview" src="../assets/Users/user.jpeg" alt="Profile picture">
+                        <!-- Profile Display View -->
+                        <div id="profileDisplay">
+                            <div class="profile-header">
+                                <div class="profile-avatar">
+                                    <img id="profileAvatar" src="../assets/Users/user.jpeg" alt="Profile picture">
                                 </div>
-                                <div class="avatar-actions">
-                                    <label for="avatarInput" class="btn btn-primary">Choose Image</label>
-                                    <input id="avatarInput" type="file" accept="image/*" style="display:none">
-                                    <button type="button" id="avatarReset" class="btn btn-outline-primary">Reset</button>
+                                <div class="profile-info">
+                                    <h3 id="profileName">Dinuka Lakmal</h3>
+                                    <p id="profileTitle">Full Stack Developer</p>
+                                    <div class="profile-rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="rating-value">4.8</span>
+                                        <span class="reviews-count">(127 reviews)</span>
+                                    </div>
                                 </div>
-                                <p class="hint">PNG/JPG up to 2MB is recommended.</p>
                             </div>
-                            <div class="form-group">
-                                <label for="displayName">Display Name</label>
-                                <input type="text" id="displayName" class="form-control" placeholder="Your name">
+                            
+                            <div class="profile-details">
+                                <div class="detail-item">
+                                    <label>Hourly Rate:</label>
+                                    <span id="profileHourlyRate">$45/hr</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Bio:</label>
+                                    <p id="profileBio">Experienced full-stack developer with 5+ years in React, Node.js, and Python. Specialized in building scalable web applications and APIs.</p>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Skills:</label>
+                                    <div class="skills-display" id="profileSkills">
+                                        <span class="skill-tag">React</span>
+                                        <span class="skill-tag">Node.js</span>
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">MongoDB</span>
+                                        <span class="skill-tag">AWS</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="social-links">
+                                    <h5>Social Media</h5>
+                                    <div class="social-links-grid">
+                                        <a href="#" class="social-link" id="profileLinkedin">
+                                            <i class="fab fa-linkedin"></i>
+                                            <span>LinkedIn</span>
+                                        </a>
+                                        <a href="#" class="social-link" id="profileGithub">
+                                            <i class="fab fa-github"></i>
+                                            <span>GitHub</span>
+                                        </a>
+                                        <a href="#" class="social-link" id="profileTwitter">
+                                            <i class="fab fa-twitter"></i>
+                                            <span>Twitter</span>
+                                        </a>
+                                        <a href="#" class="social-link" id="profilePortfolio">
+                                            <i class="fas fa-globe"></i>
+                                            <span>Portfolio</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="ratings-reviews">
+                                    <h5>Ratings & Reviews</h5>
+                                    <div class="rating-summary">
+                                        <div class="rating-breakdown">
+                                            <div class="rating-item">
+                                                <span>5★</span>
+                                                <div class="rating-bar">
+                                                    <div class="rating-fill" style="width: 80%"></div>
+                                                </div>
+                                                <span>102</span>
+                                            </div>
+                                            <div class="rating-item">
+                                                <span>4★</span>
+                                                <div class="rating-bar">
+                                                    <div class="rating-fill" style="width: 15%"></div>
+                                                </div>
+                                                <span>19</span>
+                                            </div>
+                                            <div class="rating-item">
+                                                <span>3★</span>
+                                                <div class="rating-bar">
+                                                    <div class="rating-fill" style="width: 3%"></div>
+                                                </div>
+                                                <span>4</span>
+                                            </div>
+                                            <div class="rating-item">
+                                                <span>2★</span>
+                                                <div class="rating-bar">
+                                                    <div class="rating-fill" style="width: 1%"></div>
+                                                </div>
+                                                <span>1</span>
+                                            </div>
+                                            <div class="rating-item">
+                                                <span>1★</span>
+                                                <div class="rating-bar">
+                                                    <div class="rating-fill" style="width: 1%"></div>
+                                                </div>
+                                                <span>1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="bio">Bio</label>
-                                <textarea id="bio" class="form-control" rows="4" placeholder="Tell clients about yourself"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </section>
+
+            <!-- Edit Profile Popup -->
+            <div id="editProfilePopup" class="popup-overlay">
+                <div class="popup-content">
+                    <div class="popup-header">
+                        <h4>Edit Profile</h4>
+                        <button class="btn-close" id="closeEditPopup">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="popup-body">
+                        <form id="profileEditForm">
+                            <div class="avatar-uploader">
+                                <div class="avatar">
+                                    <img id="editAvatarPreview" src="../assets/Users/user.jpeg" alt="Profile picture">
+                                </div>
+                                <div class="avatar-actions">
+                                    <label for="editAvatarInput" class="btn btn-primary">Choose Image</label>
+                                    <input id="editAvatarInput" type="file" accept="image/*" style="display:none">
+                                    <button type="button" id="editAvatarReset" class="btn btn-outline-primary">Reset</button>
+                                </div>
+                                <p class="hint">PNG/JPG up to 2MB is recommended.</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="editDisplayName">Display Name</label>
+                                <input type="text" id="editDisplayName" class="form-control" placeholder="Your name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="editBio">Bio</label>
+                                <textarea id="editBio" class="form-control" rows="4" placeholder="Tell clients about yourself"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="editHourlyRate">Hourly Rate (USD)</label>
+                                <input type="number" min="0" step="1" id="editHourlyRate" class="form-control" placeholder="e.g., 25">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="editSkills">Skills</label>
+                                <input type="text" id="editSkills" class="form-control" placeholder="Comma-separated, e.g., React, Node.js, UI/UX">
+                                <small class="hint">Add your core skills separated by commas.</small>
+                            </div>
+
+                            <div class="social-links-section">
+                                <h5>Social Links</h5>
+                                <div class="form-group">
+                                    <label for="editLinkedin">LinkedIn</label>
+                                    <input type="url" id="editLinkedin" class="form-control" placeholder="https://www.linkedin.com/in/your-profile">
+                                </div>
+                                <div class="form-group">
+                                    <label for="editGithub">GitHub</label>
+                                    <input type="url" id="editGithub" class="form-control" placeholder="https://github.com/username">
+                            </div>
+                            <div class="form-group">
+                                    <label for="editTwitter">Twitter / X</label>
+                                    <input type="url" id="editTwitter" class="form-control" placeholder="https://x.com/username">
+                            </div>
+                            <div class="form-group">
+                                    <label for="editPortfolio">Portfolio / Website</label>
+                                    <input type="url" id="editPortfolio" class="form-control" placeholder="https://yourportfolio.com">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="popup-footer">
+                        <button type="button" class="btn btn-outline-primary" id="cancelEdit">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="publishChanges">Publish Changes</button>
+                    </div>
+                    </div>
+                </div>
 
         </main>
     </div>
 
     <script src="../js/controller/freelancer-dashboard.js"></script>
-    <script>
-        (function(){
-            var toggle = document.getElementById('menuToggle');
-            var sidebar = document.querySelector('.admin-sidebar');
-            if (toggle && sidebar) {
-                toggle.addEventListener('click', function(){
-                    sidebar.classList.toggle('open');
-                });
-            }
-            var btn = document.getElementById('logoutBtn');
-            if (btn) {
-                btn.addEventListener('click', function(){
-                    try { localStorage.removeItem('key'); } catch(e) {}
-                    window.location.href = 'login.html';
-                });
-            }
-        })();
-    </script>
 </body>
 </html>
 
