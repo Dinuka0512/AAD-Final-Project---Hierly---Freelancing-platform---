@@ -57,12 +57,6 @@
         });
     }
 
-    // Profile management with popup
-    const editProfileBtn = document.getElementById('editProfileBtn');
-    const editProfilePopup = document.getElementById('editProfilePopup');
-    const closeEditPopup = document.getElementById('closeEditPopup');
-    const cancelEdit = document.getElementById('cancelEdit');
-    const publishChanges = document.getElementById('publishChanges');
 
     // Load profile data from localStorage
     function loadProfileData() {

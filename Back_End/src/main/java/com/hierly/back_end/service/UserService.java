@@ -11,4 +11,6 @@ public interface UserService {
     UserDto getUserDetails(String email);
 
     boolean updateUserPassword(UserDataDto userDataDto);
+
+    boolean updateFreelancer(String email, String name, String bio, double hourlyRate);
 }

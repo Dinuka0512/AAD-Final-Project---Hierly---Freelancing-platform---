@@ -9,6 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -35,9 +36,8 @@ public class User{
     private String title;
     private String bio;
     private double hourlyRate;
-    private String portfolioMediaLinks;
-    private String ratings;
-    private String skills;
+    private ArrayList<String> portfolioMediaLinks;
+    private ArrayList<String> skills;
 
     public User(int id, String name, String email, String password, String role) {
         this.id = id;

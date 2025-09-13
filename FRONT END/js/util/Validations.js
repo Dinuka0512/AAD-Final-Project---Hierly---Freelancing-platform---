@@ -22,7 +22,7 @@ export default class Validation {
     // Validate username (letters, numbers, underscore, 3–20 chars)
     static isValidUserName(value) {
         if (!this.isNotNull(value)) return false;
-        const regex = /^[A-Za-z]{3,20}$/;
+        const regex = /^[A-Za-z]+$/;
         return regex.test(value);
     }
 

@@ -20,7 +20,7 @@
         
         <div class="navbar-actions">
             <div class="admin-profile">
-                <img src="../assets/Users/user.jpeg" alt="Freelancer" class="admin-avatar">
+                <img src="../assets/Users/user.jpeg" alt="Freelancer" id="profilePic" class="admin-avatar">
                 <div class="admin-info">
                     <span class="admin-name" id="userName">Freelancer</span>
                     <span class="admin-role">Freelancer</span>
@@ -128,8 +128,9 @@
                                     <img id="profileAvatar" src="../assets/Users/user.jpeg" alt="Profile picture">
                                 </div>
                                 <div class="profile-info">
-                                    <h3 id="profileName">Dinuka Lakmal</h3>
-                                    <p id="profileTitle">Full Stack Developer</p>
+                                    <h3 id="profileName" style="margin: 0">Dinuka Lakmal</h3>
+                                    <p id="userEmail" style="margin: 0">Sample@gmail.com</p>
+                                    <p id="profileTitle" style="margin: 0">Full Stack Developer</p>
                                     <div class="profile-rating">
                                         <div class="stars">
                                             <i class="fas fa-star"></i>
@@ -145,15 +146,15 @@
                             </div>
                             
                             <div class="profile-details">
-                                <div class="detail-item">
+                                <div class="detail-item" id="hourlyRateSection" style="gap: 0">
                                     <label>Hourly Rate:</label>
-                                    <span id="profileHourlyRate">$45/hr</span>
+                                    <b>Rs. <span id="profileHourlyRate">45</span> For Hour</b>
                                 </div>
-                                <div class="detail-item">
+                                <div class="detail-item" id="bioSection">
                                     <label>Bio:</label>
                                     <p id="profileBio">Experienced full-stack developer with 5+ years in React, Node.js, and Python. Specialized in building scalable web applications and APIs.</p>
                                 </div>
-                                <div class="detail-item">
+                                <div class="detail-item" id="skillsSection">
                                     <label>Skills:</label>
                                     <div class="skills-display" id="profileSkills">
                                         <span class="skill-tag">React</span>
@@ -164,7 +165,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="social-links">
+                                <div class="social-links" id="socialLinksSection">
                                     <h5>Social Media</h5>
                                     <div class="social-links-grid">
                                         <a href="#" class="social-link" id="profileLinkedin">
@@ -312,7 +313,7 @@
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/controller/freelancer-dashboard.js"></script>
-    <script src="../js/service/FreelancerTemplateLoad.js"></script>
+    <script type="module" src="../js/service/FreelancerTemplateLoad.js"></script>
 </body>
 </html>
 

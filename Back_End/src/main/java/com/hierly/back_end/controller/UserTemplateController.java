@@ -7,6 +7,7 @@ import com.hierly.back_end.util.APIResponce;
 import com.hierly.back_end.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,22 +20,61 @@ public class UserTemplateController {
 
     @PostMapping("/load")
     public APIResponce<User> load(@RequestHeader("Authorization") String token) {
-        try{
+        try {
             token = token.substring(7).trim();
 
-            if(!jwtUtil.validateToken(token)) {
+            if (!jwtUtil.validateToken(token)) {
                 return new APIResponce<>(401, "Invalid or Expired Token!", null);
             }
 
-            //EXTRACT EMAIL
             String email = jwtUtil.extractUsername(token);
-            if(email != null) {
-                //NEED TO GET USER ALL DATA
-                UserDto userDetails = userService.getUserDetails(email);
-                return new APIResponce<>(200, "User Found", modelMapper.map(userDetails, User.class));
+            if(userService.isEmailExist(email)) {
+                if (email != null) {
+                    try {
+                        UserDto userDetails = userService.getUserDetails(email);
+
+                        if (userDetails == null) {
+                            return new APIResponce<>(404, "No User Found!", null);
+                        }
+
+                        return new APIResponce<>(200, "User Found", modelMapper.map(userDetails, User.class));
+                    } catch (UsernameNotFoundException ex) {
+                        return new APIResponce<>(404, "No User Found!", null);
+                    }
+                }
             }
             return new APIResponce<>(400, "User Not Found!", null);
-        }catch (Exception e) {
+        } catch (Exception e) {
+            return new APIResponce<>(500, "Error validating token: " + e.getMessage(), null);
+        }
+    }
+
+    @PostMapping("/update")
+    public APIResponce<Boolean> update(@RequestHeader("Authorization") String token,
+                                    @RequestParam("name") String name,
+                                    @RequestParam("bio") String bio,
+                                    @RequestParam("hourlyRate") double hourlyRate) {
+        try {
+            token = token.substring(7).trim();
+
+            if (!jwtUtil.validateToken(token)) {
+                return new APIResponce<>(401, "Invalid or Expired Token!", null);
+            }
+
+            String email = jwtUtil.extractUsername(token);
+            if(userService.isEmailExist(email)) {
+                if (email != null) {
+                    try {
+                        //UPDATE
+                        boolean isUpdated = userService.updateFreelancer(email,name, bio, hourlyRate);
+                        return new APIResponce<>(200, "User Updated", isUpdated);
+                    } catch (UsernameNotFoundException ex) {
+                        return new APIResponce<>(404, "No User Found!", null);
+                    }
+                }
+            }
+            return new APIResponce<>(400, "User Not Found!", null);
+        } catch (Exception e) {
             return new APIResponce<>(500, "Error validating token: " + e.getMessage(), null);
         }
     }

@@ -57,4 +57,15 @@ public class UserServiceImpl implements UserService {
         }
         return false;
     }
+
+    @Override
+    @Transactional
+    public boolean updateFreelancer(String email, String name, String bio, double hourlyRate) {
+        User user = userRepo.findByEmail(email).get();
+        user.setName(name);
+        user.setBio(bio);
+        user.setHourlyRate(hourlyRate);
+        userRepo.save(user);
+        return true;
+    }
 }

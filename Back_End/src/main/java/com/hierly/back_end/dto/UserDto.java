@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -20,11 +22,11 @@ public class UserDto {
     private String profilePicture;
 
     //FREELANCER
+    private String title;
     private String bio;
     private double hourlyRate;
-    private String portfolioMediaLinks;
-    private String ratings;
-    private String skills;
+    private ArrayList<String> portfolioMediaLinks;
+    private ArrayList<String> skills;
 
     public UserDto(String id, String name, String email, String password, String role) {
         this.id = id;
