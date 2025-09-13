@@ -19,14 +19,23 @@ public class UserTemplateController {
 
     @PostMapping("/load")
     public APIResponce<User> load(@RequestHeader("Authorization") String token) {
-        System.out.println(token);
-        token = token.substring(7).trim();
-        String email = jwtUtil.extractUsername(token);
-        if(email != null) {
-            //NEED TO GET USER ALL DATA
-            UserDto userDetails = userService.getUserDetails(email);
-            return new APIResponce<>(200, "User Found", modelMapper.map(userDetails, User.class));
+        try{
+            token = token.substring(7).trim();
+
+            if(!jwtUtil.validateToken(token)) {
+                return new APIResponce<>(401, "Invalid or Expired Token!", null);
+            }
+
+            //EXTRACT EMAIL
+            String email = jwtUtil.extractUsername(token);
+            if(email != null) {
+                //NEED TO GET USER ALL DATA
+                UserDto userDetails = userService.getUserDetails(email);
+                return new APIResponce<>(200, "User Found", modelMapper.map(userDetails, User.class));
+            }
+            return new APIResponce<>(400, "User Not Found!", null);
+        }catch (Exception e) {
+            return new APIResponce<>(500, "Error validating token: " + e.getMessage(), null);
         }
-        return new APIResponce<>(400, "User Not Found!", null);
     }
 }

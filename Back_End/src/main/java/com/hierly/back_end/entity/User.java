@@ -32,6 +32,7 @@ public class User{
     private String profilePicture;
 
     //FREELANCER
+    private String title;
     private String bio;
     private double hourlyRate;
     private String portfolioMediaLinks;
