@@ -1,11 +1,10 @@
-import Validation from "../util/Validations.js";
-
 let token = localStorage.getItem("key");
 let userName = $("#userName");
 let profileName = $("#profileName");
 let profileTitle = $("#profileTitle");
 let userEmail = $("#userEmail");
 let profileImage = $("#profileAvatar");
+let editAvatarPreview = $("#editAvatarPreview");
 let profilePic = $("#profilePic");
 let hourlyRateSection = $("#hourlyRateSection");
 let hourlyRate = $("#profileHourlyRate");
@@ -15,41 +14,44 @@ let profileSkills = $("#profileSkills");
 let skillsSection = $("#skillsSection");
 let socialLinksSection = $("#socialLinksSection");
 
-$.ajax({
-    type: 'POST',
-    url: 'http://localhost:8080/TemplateUser/load',
-    dataType: 'json',
-    headers: {"Authorization": `Bearer ${token}`},
-    contentType: 'application/json',
-    success: function (data) {
-        if(data.data.role === "Freelancer"){
-            //FREELANCER DATA LOAD
-            freelancersDataLoad(data);
-        }else{
-            //NOT THE FREELANCER
+reloadPage();
+function reloadPage(){
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8080/TemplateUser/load',
+        dataType: 'json',
+        headers: {"Authorization": `Bearer ${token}`},
+        contentType: 'application/json',
+        success: function (data) {
+            if(data.data.role === "Freelancer"){
+                //FREELANCER DATA LOAD
+                freelancersDataLoad(data);
+            }else{
+                //NOT THE FREELANCER
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Access Denied',
+                    text: 'Only freelancers can access this page.',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    // optional: redirect after alert
+                    window.location.href = "login.html";
+                });
+            }
+        },
+        error: function (data) {
             Swal.fire({
                 icon: 'error',
-                title: 'Access Denied',
-                text: 'Only freelancers can access this page.',
+                title: 'Something went wrong',
+                text: 'Try again, Login or Sign up Again!!!..',
                 confirmButtonText: 'OK'
             }).then(() => {
                 // optional: redirect after alert
-                window.location.href = "login.html";
+                window.location.href = "signup.html";
             });
         }
-    },
-    error: function (data) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Something went wrong',
-            text: 'Try again, Login or Sign up Again!!!..',
-            confirmButtonText: 'OK'
-        }).then(() => {
-            // optional: redirect after alert
-            window.location.href = "signup.html";
-        });
-    }
-})
+    })
+}
 
 function freelancersDataLoad(data) {
     console.log(data);
@@ -64,6 +66,7 @@ function freelancersDataLoad(data) {
         //set the default picture
         profileImage.attr("src", "../assets/images/TempUser.png");
         profilePic.attr("src", "../assets/images/TempUser.png");
+        editAvatarPreview.attr("src", "../assets/images/TempUser.png");
     }else{
         //need to load the default picture
     }
@@ -84,22 +87,6 @@ function freelancersDataLoad(data) {
         profileBio.html(data.data.bio);
     }
 
-    //SET SKILLS------------------------------
-    if(data.data.skills === null){
-        skillsSection.hide();
-    }else{
-        skillsSection.show();
-        let skillsHtml = "";
-
-        // If your skills are in an array
-        data.data.skills.forEach(skill => {
-            skillsHtml += `<span class="skill-tag">${skill}</span>`;
-        });
-
-        // Set inside profileSkills div
-        profileSkills.html(skillsHtml);
-    }
-
     //SET SOCIAL MEDIA LINKS------------------
     if(data.data.portfolioMediaLinks === null){
         socialLinksSection.hide();
@@ -109,37 +96,41 @@ function freelancersDataLoad(data) {
     }
 }
 
-
-let txtName = $("#editDisplayName");
-let txtBio = $("#editBio");
-let txtHourlyRate = $("#editHourlyRate");
 let saveBtn = $("#publishChanges");
 
 saveBtn.on("click", function () {
-    if(!Validation.isValidUserName(txtName.value)){
-        Swal.fire({
-            icon: 'warning',
-            title: 'Invalid Username',
-            html: "Username can't have numbers or symbols<br>Only letters allowed"
-        });
-        return;
-    }
-
     updateUserProfile();
-})
+});
 
 function updateUserProfile() {
+    // get values at the time of click
+    let txtName = $("#editDisplayName").val();
+    let txtBio = $("#editBio").val();
+    let txtHourlyRate = $("#editHourlyRate").val();
+
+    // build URL properly with &
+    let url = "http://localhost:8080/TemplateUser/update"
+        + "?name=" + txtName
+        + "&bio=" + txtBio
+        + "&hourlyRate=" + txtHourlyRate;
+
+    console.log(url);
+
     $.ajax({
         type: "POST",
-        url: 'http://localhost:8080/TemplateUser/update?name='+txtName.val()+'bio=' + txtBio.val()+'hourlyRate=' + hourlyRate.val(),
+        url: url,
         dataType: 'json',
         headers: {"Authorization": `Bearer ${token}`},
         contentType: 'application/json',
         success: function (data) {
-            console.log(data);
+            console.log("Update Success:", data);
+            Swal.fire("Success","Profile updated successfully!", "success").then(
+                reloadPage
+            );
         },
-        error: function (data) {
-            console.log(data);
+        error: function (err) {
+            console.log("Update Error:", err);
+            Swal.fire("Error", "Could not update profile", "error");
         }
-    })
+    });
 }

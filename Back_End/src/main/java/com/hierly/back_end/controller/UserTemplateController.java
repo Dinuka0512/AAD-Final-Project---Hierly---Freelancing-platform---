@@ -53,8 +53,9 @@ public class UserTemplateController {
     public APIResponce<Boolean> update(@RequestHeader("Authorization") String token,
                                     @RequestParam("name") String name,
                                     @RequestParam("bio") String bio,
-                                    @RequestParam("hourlyRate") double hourlyRate) {
+                                    @RequestParam("hourlyRate") String hourlyRate) {
         try {
+            System.out.println("HI");
             token = token.substring(7).trim();
 
             if (!jwtUtil.validateToken(token)) {
@@ -66,7 +67,7 @@ public class UserTemplateController {
                 if (email != null) {
                     try {
                         //UPDATE
-                        boolean isUpdated = userService.updateFreelancer(email,name, bio, hourlyRate);
+                        boolean isUpdated = userService.updateFreelancer(email,name, bio, Double.parseDouble(hourlyRate));
                         return new APIResponce<>(200, "User Updated", isUpdated);
                     } catch (UsernameNotFoundException ex) {
                         return new APIResponce<>(404, "No User Found!", null);

@@ -1,4 +1,4 @@
-// Minimal dashboard interactions without AJAX or auth checks
+// Dashboard interactions with edit profile popup (no update logic)
 (function () {
     function setActive(sectionId) {
         document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
@@ -9,6 +9,7 @@
         if (sec) sec.classList.add('active');
     }
 
+    // Navigation switching
     document.querySelectorAll('.nav-link').forEach(a => {
         a.addEventListener('click', function (e) {
             e.preventDefault();
@@ -21,7 +22,7 @@
     const toggle = document.getElementById('menuToggle');
     const sidebar = document.querySelector('.admin-sidebar');
     const mainContent = document.querySelector('.admin-main');
-    
+
     if (toggle && sidebar) {
         toggle.addEventListener('click', function (e) {
             e.stopPropagation();
@@ -29,7 +30,7 @@
             toggle.classList.toggle('active');
         });
     }
-    
+
     // Close sidebar when clicking outside on mobile
     if (mainContent && sidebar) {
         mainContent.addEventListener('click', function() {
@@ -39,7 +40,7 @@
             }
         });
     }
-    
+
     // Close sidebar on window resize if screen becomes larger
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
@@ -57,84 +58,22 @@
         });
     }
 
+    // ===== Edit Profile Popup (only open/close, no save) =====
+    const editProfileBtn = document.getElementById('editProfileBtn');
+    const editProfilePopup = document.getElementById('editProfilePopup');
+    const closeEditPopup = document.getElementById('closeEditPopup');
+    const cancelEdit = document.getElementById('cancelEdit');
 
-    // Load profile data from localStorage
-    function loadProfileData() {
-        try {
-            const dataRaw = localStorage.getItem('freelancer_profile');
-            if (dataRaw) {
-                const data = JSON.parse(dataRaw);
-                updateProfileDisplay(data);
-            }
-        } catch (_) {}
-    }
-
-    // Update profile display with data
-    function updateProfileDisplay(data) {
-        const setText = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
-        const setHtml = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
-        
-        setText('profileName', data.displayName || 'Dinuka Lakmal');
-        setText('profileTitle', data.title || 'Full Stack Developer');
-        setText('profileHourlyRate', `$${data.hourlyRate || 45}/hr`);
-        setText('profileBio', data.bio || 'Experienced full-stack developer with 5+ years in React, Node.js, and Python. Specialized in building scalable web applications and APIs.');
-        
-        // Update skills display
-        if (data.skills && data.skills.length > 0) {
-            const skillsHtml = data.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('');
-            setHtml('profileSkills', skillsHtml);
-        }
-        
-        // Update social links
-        const socialLinks = {
-            'profileLinkedin': data.linkedin,
-            'profileGithub': data.github,
-            'profileTwitter': data.twitter,
-            'profilePortfolio': data.portfolio
-        };
-        
-        Object.entries(socialLinks).forEach(([id, url]) => {
-            const el = document.getElementById(id);
-            if (el) {
-                if (url) {
-                    el.href = url;
-                    el.style.display = 'flex';
-                } else {
-                    el.style.display = 'none';
-                }
-            }
-        });
-    }
-
-    // Open edit popup
-    if (editProfileBtn && editProfilePopup) {
-        editProfileBtn.addEventListener('click', function() {
-            // Load current data into edit form
-            try {
-                const dataRaw = localStorage.getItem('freelancer_profile');
-                if (dataRaw) {
-                    const data = JSON.parse(dataRaw);
-                    const set = (id, val) => { const el = document.getElementById(id); if (el && val != null) el.value = val; };
-                    set('editDisplayName', data.displayName);
-                    set('editBio', data.bio);
-                    set('editHourlyRate', data.hourlyRate);
-                    set('editSkills', (data.skills || []).join(', '));
-                    set('editLinkedin', data.linkedin);
-                    set('editGithub', data.github);
-                    set('editTwitter', data.twitter);
-                    set('editPortfolio', data.portfolio);
-                }
-            } catch (_) {}
-            
-            editProfilePopup.classList.add('active');
-        });
-    }
-
-    // Close edit popup
     function closePopup() {
         if (editProfilePopup) {
             editProfilePopup.classList.remove('active');
         }
+    }
+
+    if (editProfileBtn && editProfilePopup) {
+        editProfileBtn.addEventListener('click', function() {
+            editProfilePopup.classList.add('active');
+        });
     }
 
     if (closeEditPopup) {
@@ -145,74 +84,202 @@
         cancelEdit.addEventListener('click', closePopup);
     }
 
-    // Publish changes
-    if (publishChanges) {
-        publishChanges.addEventListener('click', function() {
-            const get = (id) => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
-            const hourlyRate = parseFloat(get('editHourlyRate'));
-            
-            if (Number.isNaN(hourlyRate) || hourlyRate < 0) {
-                alert('Please enter a valid hourly rate (>= 0).');
-                return;
-            }
-            
-            const skills = get('editSkills').split(',').map(s => s.trim()).filter(Boolean);
-            const payload = {
-                displayName: get('editDisplayName'),
-                bio: get('editBio'),
-                hourlyRate,
-                skills,
-                linkedin: get('editLinkedin') || '',
-                github: get('editGithub') || '',
-                twitter: get('editTwitter') || '',
-                portfolio: get('editPortfolio') || '',
-                rating: 4.8 // Fixed rating as per requirements
-            };
-            
-            try {
-                localStorage.setItem('freelancer_profile', JSON.stringify(payload));
-                updateProfileDisplay(payload);
-                closePopup();
-                alert('Profile updated successfully!');
-            } catch (_) {
-                alert('Could not save profile locally.');
-            }
+    // ===== Skills Management =====
+    const manageSkillsBtn = document.getElementById('manageSkillsBtn');
+    const skillsPopup = document.getElementById('skillsPopup');
+    const closeSkillsPopup = document.getElementById('closeSkillsPopup');
+    const cancelSkills = document.getElementById('cancelSkills');
+    const skillInput = document.getElementById('skillInput');
+    const addSkillBtn = document.getElementById('addSkillBtn');
+    const saveSkillsBtn = document.getElementById('saveSkills');
+    const skillsContainer = document.getElementById('skillsContainer');
+    const skillSuggestions = document.getElementById('skillSuggestions');
+    const profileSkills = document.getElementById('profileSkills');
+
+    // Common skills suggestions
+    const commonSkills = [
+        'JavaScript', 'Python', 'Java', 'React', 'Node.js', 'Angular', 'Vue.js',
+        'HTML', 'CSS', 'TypeScript', 'PHP', 'Laravel', 'Django', 'Flask',
+        'MongoDB', 'MySQL', 'PostgreSQL', 'Redis', 'AWS', 'Azure', 'Docker',
+        'Kubernetes', 'Git', 'Linux', 'REST API', 'GraphQL', 'Microservices',
+        'Machine Learning', 'Data Science', 'AI', 'Blockchain', 'Web3',
+        'UI/UX Design', 'Figma', 'Adobe XD', 'Photoshop', 'Illustrator',
+        'Project Management', 'Agile', 'Scrum', 'DevOps', 'CI/CD',
+        'Mobile Development', 'React Native', 'Flutter', 'iOS', 'Android',
+        'Backend Development', 'Frontend Development', 'Full Stack',
+        'Database Design', 'System Architecture', 'Cloud Computing',
+        'Cybersecurity', 'Testing', 'QA', 'Automation', 'Selenium'
+    ];
+
+    let currentSkills = [];
+    let filteredSuggestions = [];
+
+    // Initialize skills from profile
+    function initializeSkills() {
+        const existingSkills = Array.from(profileSkills.querySelectorAll('.skill-tag'))
+            .map(tag => tag.textContent.trim());
+        currentSkills = [...existingSkills];
+        renderSkills();
+    }
+
+    // Render skills in the popup
+    function renderSkills() {
+        skillsContainer.innerHTML = '';
+        
+        if (currentSkills.length === 0) {
+            skillsContainer.innerHTML = '<div class="empty-skills">No skills added yet. Add some skills to get started!</div>';
+            return;
+        }
+
+        currentSkills.forEach((skill, index) => {
+            const skillElement = document.createElement('div');
+            skillElement.className = 'skill-item';
+            skillElement.innerHTML = `
+                <span>${skill}</span>
+                <button class="skill-remove" data-index="${index}">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            skillsContainer.appendChild(skillElement);
+        });
+
+        // Add event listeners to remove buttons
+        skillsContainer.querySelectorAll('.skill-remove').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                removeSkill(index);
+            });
         });
     }
 
-    // Load profile data on page load
-    loadProfileData();
+    // Add a new skill
+    function addSkill(skillName) {
+        const trimmedSkill = skillName.trim();
+        if (trimmedSkill && !currentSkills.includes(trimmedSkill)) {
+            currentSkills.push(trimmedSkill);
+            renderSkills();
+            skillInput.value = '';
+            hideSuggestions();
+        }
+    }
 
-    // Avatar preview handling
-    const input = document.getElementById('avatarInput');
-    const preview = document.getElementById('avatarPreview');
-    const resetBtn = document.getElementById('avatarReset');
-    const defaultSrc = preview ? preview.src : '';
+    // Remove a skill
+    function removeSkill(index) {
+        currentSkills.splice(index, 1);
+        renderSkills();
+    }
 
-    if (input && preview) {
-        input.addEventListener('change', function () {
-            const file = this.files && this.files[0];
-            if (!file) return;
-            if (!file.type.startsWith('image/')) {
-                alert('Please select a valid image file.');
-                this.value = '';
-                return;
-            }
-            if (file.size > 2 * 1024 * 1024) { // 2MB limit
-                alert('Image must be less than 2MB.');
-                this.value = '';
-                return;
-            }
-            const url = URL.createObjectURL(file);
-            preview.src = url;
+    // Show suggestions
+    function showSuggestions() {
+        const inputValue = skillInput.value.toLowerCase().trim();
+        if (inputValue.length < 2) {
+            hideSuggestions();
+            return;
+        }
+
+        filteredSuggestions = commonSkills.filter(skill => 
+            skill.toLowerCase().includes(inputValue) && 
+            !currentSkills.includes(skill)
+        ).slice(0, 8);
+
+        if (filteredSuggestions.length > 0) {
+            skillSuggestions.innerHTML = filteredSuggestions.map(skill => 
+                `<div class="suggestion-item" data-skill="${skill}">${skill}</div>`
+            ).join('');
+            skillSuggestions.style.display = 'block';
+
+            // Add event listeners to suggestions
+            skillSuggestions.querySelectorAll('.suggestion-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const skill = this.getAttribute('data-skill');
+                    addSkill(skill);
+                });
+            });
+        } else {
+            hideSuggestions();
+        }
+    }
+
+    // Hide suggestions
+    function hideSuggestions() {
+        skillSuggestions.style.display = 'none';
+    }
+
+    // Save skills to profile
+    function saveSkills() {
+        profileSkills.innerHTML = currentSkills.map(skill => 
+            `<span class="skill-tag">${skill}</span>`
+        ).join('');
+        closeSkillsPopup();
+        
+        // Show success message
+        if (typeof Swal !== 'undefined') {
+            Swal.fire({
+                icon: 'success',
+                title: 'Skills Updated!',
+                text: 'Your skills have been updated successfully.',
+                timer: 2000,
+                showConfirmButton: false
+            });
+        }
+    }
+
+    // Close skills popup
+    function closeSkillsPopupFunc() {
+        if (skillsPopup) {
+            skillsPopup.classList.remove('active');
+            // Reset to current profile skills
+            initializeSkills();
+        }
+    }
+
+    // Event listeners
+    if (manageSkillsBtn && skillsPopup) {
+        manageSkillsBtn.addEventListener('click', function() {
+            initializeSkills();
+            skillsPopup.classList.add('active');
         });
     }
 
-    if (resetBtn && preview) {
-        resetBtn.addEventListener('click', function () {
-            preview.src = defaultSrc;
-            if (input) input.value = '';
+    if (closeSkillsPopup) {
+        closeSkillsPopup.addEventListener('click', closeSkillsPopupFunc);
+    }
+
+    if (cancelSkills) {
+        cancelSkills.addEventListener('click', closeSkillsPopupFunc);
+    }
+
+    if (addSkillBtn && skillInput) {
+        addSkillBtn.addEventListener('click', function() {
+            addSkill(skillInput.value);
+        });
+    }
+
+    if (skillInput) {
+        skillInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                addSkill(skillInput.value);
+            }
+        });
+
+        skillInput.addEventListener('input', showSuggestions);
+        skillInput.addEventListener('blur', function() {
+            // Delay hiding suggestions to allow clicking on them
+            setTimeout(hideSuggestions, 200);
+        });
+    }
+
+    if (saveSkillsBtn) {
+        saveSkillsBtn.addEventListener('click', saveSkills);
+    }
+
+    // Close popup when clicking outside
+    if (skillsPopup) {
+        skillsPopup.addEventListener('click', function(e) {
+            if (e.target === skillsPopup) {
+                closeSkillsPopupFunc();
+            }
         });
     }
 })();
-
