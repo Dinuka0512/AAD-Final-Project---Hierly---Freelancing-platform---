@@ -25,8 +25,10 @@ public class UserDto {
     private String title;
     private String bio;
     private double hourlyRate;
-    private ArrayList<String> portfolioMediaLinks;
     private ArrayList<String> skills;
+    private String linkedInLink;
+    private String gitHubLink;
+    private String websiteLink;
 
     public UserDto(String id, String name, String email, String password, String role) {
         this.id = id;

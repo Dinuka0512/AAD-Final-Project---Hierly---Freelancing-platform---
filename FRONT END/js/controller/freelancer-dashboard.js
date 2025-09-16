@@ -95,6 +95,7 @@
     const skillsContainer = document.getElementById('skillsContainer');
     const skillSuggestions = document.getElementById('skillSuggestions');
     const profileSkills = document.getElementById('profileSkills');
+    const skillsHeader = document.querySelector('#skillsSection .skills-header');
 
     // Common skills suggestions
     const commonSkills = [
@@ -114,10 +115,29 @@
     let currentSkills = [];
     let filteredSuggestions = [];
 
+    function ensureManageSkillsButton() {
+        if (!skillsHeader) return;
+        let btn = document.getElementById('manageSkillsBtn');
+        if (!btn) {
+            btn = document.createElement('button');
+            btn.className = 'btn btn-outline-primary btn-sm';
+            btn.id = 'manageSkillsBtn';
+            btn.innerHTML = '<i class="fas fa-pen"></i> Manage Skills';
+            btn.addEventListener('click', openSkillsPopup);
+            skillsHeader.appendChild(btn);
+        }
+    }
+
+    function removeManageSkillsButton() {
+        const btn = document.getElementById('manageSkillsBtn');
+        if (btn && btn.parentElement) btn.parentElement.removeChild(btn);
+    }
+
     // Initialize skills from profile
     function initializeSkills() {
-        const existingSkills = Array.from(profileSkills.querySelectorAll('.skill-tag'))
-            .map(tag => tag.textContent.trim());
+        const existingSkills = Array.from(profileSkills.querySelectorAll('.skill-tag:not(.skill-placeholder)'))
+            .map(tag => tag.textContent.trim())
+            .filter(skill => skill && skill !== 'Add new skill' && skill !== 'Add Your Skill Here');
         currentSkills = [...existingSkills];
         renderSkills();
     }
@@ -207,10 +227,18 @@
 
     // Save skills to profile
     function saveSkills() {
-        profileSkills.innerHTML = currentSkills.map(skill => 
-            `<span class="skill-tag">${skill}</span>`
-        ).join('');
-        closeSkillsPopup();
+        if (currentSkills.length > 0) {
+            profileSkills.innerHTML = currentSkills.map(skill => 
+                `<span class=\"skill-tag\">${skill}</span>`
+            ).join('');
+            ensureManageSkillsButton();
+        } else {
+            profileSkills.innerHTML = '<div class="skill-placeholder" id="addSkillPlaceholder"><i class="fas fa-plus"></i> Add new skill</div>';
+            removeManageSkillsButton();
+            const addSkillPlaceholderEl = document.getElementById('addSkillPlaceholder');
+            if (addSkillPlaceholderEl) addSkillPlaceholderEl.addEventListener('click', openSkillsPopup);
+        }
+        closeSkillsPopupFunc();
         
         // Show success message
         if (typeof Swal !== 'undefined') {
@@ -234,11 +262,19 @@
     }
 
     // Event listeners
+    function openSkillsPopup() {
+        initializeSkills();
+        skillsPopup.classList.add('active');
+    }
+
     if (manageSkillsBtn && skillsPopup) {
-        manageSkillsBtn.addEventListener('click', function() {
-            initializeSkills();
-            skillsPopup.classList.add('active');
-        });
+        manageSkillsBtn.addEventListener('click', openSkillsPopup);
+    }
+
+    // Open popup when clicking placeholder or empty area
+    const addSkillPlaceholder = document.getElementById('addSkillPlaceholder');
+    if (addSkillPlaceholder) {
+        addSkillPlaceholder.addEventListener('click', openSkillsPopup);
     }
 
     if (closeSkillsPopup) {
@@ -280,6 +316,126 @@
             if (e.target === skillsPopup) {
                 closeSkillsPopupFunc();
             }
+        });
+    }
+
+    // On load: if there are existing skills, show manage button; if only placeholder, remove button
+    (function setupInitialSkillsUI() {
+        const hasSkillTags = profileSkills && profileSkills.querySelector('.skill-tag:not(.skill-placeholder)');
+        const hasPlaceholder = profileSkills && profileSkills.querySelector('#addSkillPlaceholder');
+        
+        if (hasSkillTags) {
+            ensureManageSkillsButton();
+        } else if (hasPlaceholder) {
+            removeManageSkillsButton();
+            const addSkillPlaceholderEl = document.getElementById('addSkillPlaceholder');
+            if (addSkillPlaceholderEl) addSkillPlaceholderEl.addEventListener('click', openSkillsPopup);
+        }
+    })();
+
+    // Observe dynamic changes to skills and auto-toggle Manage button
+    if (profileSkills) {
+        let skillsUiUpdateTimer;
+        const observer = new MutationObserver(() => {
+            clearTimeout(skillsUiUpdateTimer);
+            skillsUiUpdateTimer = setTimeout(() => {
+                const hasSkillTags = profileSkills.querySelector('.skill-tag:not(.skill-placeholder)');
+                const hasPlaceholder = profileSkills.querySelector('#addSkillPlaceholder');
+                if (hasSkillTags) {
+                    ensureManageSkillsButton();
+                } else if (hasPlaceholder) {
+                    removeManageSkillsButton();
+                    const addSkillPlaceholderEl = document.getElementById('addSkillPlaceholder');
+                    if (addSkillPlaceholderEl) addSkillPlaceholderEl.addEventListener('click', openSkillsPopup);
+                }
+            }, 50);
+        });
+        observer.observe(profileSkills, { childList: true, subtree: true });
+    }
+
+    // Function to update skills UI when data is loaded externally
+    function updateSkillsUI() {
+        const hasSkillTags = profileSkills && profileSkills.querySelector('.skill-tag:not(.skill-placeholder)');
+        const hasPlaceholder = profileSkills && profileSkills.querySelector('#addSkillPlaceholder');
+        
+        if (hasSkillTags) {
+            ensureManageSkillsButton();
+        } else if (hasPlaceholder) {
+            removeManageSkillsButton();
+            const addSkillPlaceholderEl = document.getElementById('addSkillPlaceholder');
+            if (addSkillPlaceholderEl) addSkillPlaceholderEl.addEventListener('click', openSkillsPopup);
+        }
+    }
+
+    // Make updateSkillsUI available globally for external calls
+    window.updateSkillsUI = updateSkillsUI;
+
+    // ===== Social Links Management =====
+    const socialPopup = document.getElementById('socialPopup');
+    const closeSocialPopup = document.getElementById('closeSocialPopup');
+    const cancelSocial = document.getElementById('cancelSocial');
+    const saveSocial = document.getElementById('saveSocial');
+    const addSocialLinksPlaceholder = document.getElementById('addSocialLinksPlaceholder');
+    const socialLinksGrid = document.getElementById('socialLinksGrid');
+
+    const inputLinkedin = document.getElementById('editLinkedin');
+    const inputGithub = document.getElementById('editGithub');
+    const inputTwitter = document.getElementById('editTwitter');
+    const inputPortfolio = document.getElementById('editPortfolio');
+
+    function openSocialPopup() {
+        socialPopup.classList.add('active');
+    }
+
+    function closeSocialPopupFunc() {
+        socialPopup.classList.remove('active');
+    }
+
+    function renderSocialLinks(links) {
+        // If all empty -> show placeholder
+        const hasAny = Object.values(links).some(v => v && v.trim() !== '');
+        if (!hasAny) {
+            socialLinksGrid.innerHTML = '<div class="social-placeholder" id="addSocialLinksPlaceholder"><i class="fas fa-plus"></i><span>Add social links</span></div>';
+            const ph = document.getElementById('addSocialLinksPlaceholder');
+            if (ph) ph.addEventListener('click', openSocialPopup);
+            return;
+        }
+
+        const items = [];
+        if (links.linkedin) items.push(`<a href="${links.linkedin}" target="_blank" rel="noopener" class="social-link"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>`);
+        if (links.github) items.push(`<a href="${links.github}" target="_blank" rel="noopener" class="social-link"><i class="fab fa-github"></i><span>GitHub</span></a>`);
+        if (links.twitter) items.push(`<a href="${links.twitter}" target="_blank" rel="noopener" class="social-link"><i class="fab fa-twitter"></i><span>Twitter</span></a>`);
+        if (links.portfolio) items.push(`<a href="${links.portfolio}" target="_blank" rel="noopener" class="social-link"><i class="fas fa-globe"></i><span>Portfolio</span></a>`);
+        // Add an edit tile to modify later
+        items.push('<div class="social-placeholder" id="editSocialLinks"><i class="fas fa-pen"></i><span>Edit</span></div>');
+        socialLinksGrid.innerHTML = items.join('');
+
+        const editBtn = document.getElementById('editSocialLinks');
+        if (editBtn) editBtn.addEventListener('click', openSocialPopup);
+    }
+
+    function saveSocialLinks() {
+        const links = {
+            linkedin: inputLinkedin.value.trim(),
+            github: inputGithub.value.trim(),
+            twitter: inputTwitter.value.trim(),
+            portfolio: inputPortfolio.value.trim()
+        };
+        renderSocialLinks(links);
+        closeSocialPopupFunc();
+        if (typeof Swal !== 'undefined') {
+            Swal.fire({ icon: 'success', title: 'Social links saved', timer: 1600, showConfirmButton: false });
+        }
+    }
+
+    if (addSocialLinksPlaceholder) addSocialLinksPlaceholder.addEventListener('click', openSocialPopup);
+    if (closeSocialPopup) closeSocialPopup.addEventListener('click', closeSocialPopupFunc);
+    if (cancelSocial) cancelSocial.addEventListener('click', closeSocialPopupFunc);
+    if (saveSocial) saveSocial.addEventListener('click', saveSocialLinks);
+
+    if (socialPopup) {
+        socialPopup.addEventListener('click', function(e) {
+            if (e.target === socialPopup) closeSocialPopupFunc();
         });
     }
 })();

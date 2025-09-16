@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -64,6 +65,14 @@ public class UserServiceImpl implements UserService {
         user.setName(name);
         user.setBio(bio);
         user.setHourlyRate(hourlyRate);
+        userRepo.save(user);
+        return true;
+    }
+
+    @Override
+    public boolean updateSkills(ArrayList<String> skills, String email) {
+        User user = userRepo.findByEmail(email).get();
+        user.setSkills(skills);
         userRepo.save(user);
         return true;
     }

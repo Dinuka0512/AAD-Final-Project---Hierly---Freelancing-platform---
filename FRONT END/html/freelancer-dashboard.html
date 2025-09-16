@@ -157,34 +157,19 @@
                                 <div class="detail-item" id="skillsSection" style="gap: 0">
                                     <div class="skills-header">
                                         <label>Skills:</label>
-                                        <button class="btn btn-outline-primary btn-sm" id="manageSkillsBtn">
-                                            <i class="fas fa-edit"></i> Manage Skills
-                                        </button>
                                     </div>
                                     <div class="skills-display" id="profileSkills">
-                                        <span class="skill-tag" id="NotAddSkill">Add Your Skill Here</span>
+                                        <div class="skill-placeholder" id="addSkillPlaceholder"><i class="fas fa-plus"></i> Add new skill</div>
                                     </div>
                                 </div>
                                 
                                 <div class="social-links" id="socialLinksSection">
                                     <h5>Social Media</h5>
-                                    <div class="social-links-grid">
-                                        <a href="#" class="social-link" id="profileLinkedin">
-                                            <i class="fab fa-linkedin"></i>
-                                            <span>LinkedIn</span>
-                                        </a>
-                                        <a href="#" class="social-link" id="profileGithub">
-                                            <i class="fab fa-github"></i>
-                                            <span>GitHub</span>
-                                        </a>
-                                        <a href="#" class="social-link" id="profileTwitter">
-                                            <i class="fab fa-twitter"></i>
-                                            <span>Twitter</span>
-                                        </a>
-                                        <a href="#" class="social-link" id="profilePortfolio">
-                                            <i class="fas fa-globe"></i>
-                                            <span>Portfolio</span>
-                                        </a>
+                                    <div class="social-links-grid" id="socialLinksGrid">
+                                        <div class="social-placeholder" id="addSocialLinksPlaceholder">
+                                            <i class="fas fa-plus"></i>
+                                            <span>Add social links</span>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -273,26 +258,6 @@
                                 <label for="editHourlyRate">Hourly Rate (USD)</label>
                                 <input type="number" min="0" step="1" id="editHourlyRate" class="form-control" placeholder="e.g., 25">
                             </div>
-
-                            <div class="social-links-section">
-                                <h5>Social Links</h5>
-                                <div class="form-group">
-                                    <label for="editLinkedin">LinkedIn</label>
-                                    <input type="url" id="editLinkedin" class="form-control" placeholder="https://www.linkedin.com/in/your-profile">
-                                </div>
-                                <div class="form-group">
-                                    <label for="editGithub">GitHub</label>
-                                    <input type="url" id="editGithub" class="form-control" placeholder="https://github.com/username">
-                            </div>
-                            <div class="form-group">
-                                    <label for="editTwitter">Twitter / X</label>
-                                    <input type="url" id="editTwitter" class="form-control" placeholder="https://x.com/username">
-                            </div>
-                            <div class="form-group">
-                                    <label for="editPortfolio">Portfolio / Website</label>
-                                    <input type="url" id="editPortfolio" class="form-control" placeholder="https://yourportfolio.com">
-                                </div>
-                            </div>
                         </form>
                     </div>
                     <div class="popup-footer">
@@ -333,6 +298,39 @@
                     <div class="popup-footer">
                         <button type="button" class="btn btn-outline-primary" id="cancelSkills">Cancel</button>
                         <button type="button" class="btn btn-primary" id="saveSkills">Save Skills</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links Popup -->
+            <div id="socialPopup" class="popup-overlay">
+                <div class="popup-content">
+                    <div class="popup-header">
+                        <h4>Social Links</h4>
+                        <button class="btn-close" id="closeSocialPopup">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="popup-body">
+                        <div class="social-links-section">
+                            <h5>Social Links</h5>
+                            <div class="form-group">
+                                <label for="editLinkedin">LinkedIn</label>
+                                <input type="url" id="editLinkedin" class="form-control" placeholder="https://www.linkedin.com/in/your-profile">
+                            </div>
+                            <div class="form-group">
+                                <label for="editGithub">GitHub</label>
+                                <input type="url" id="editGithub" class="form-control" placeholder="https://github.com/username">
+                            </div>
+                            <div class="form-group">
+                                <label for="editPortfolio">Portfolio / Website</label>
+                                <input type="url" id="editPortfolio" class="form-control" placeholder="https://yourportfolio.com">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup-footer">
+                        <button type="button" class="btn btn-outline-primary" id="cancelSocial">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="saveSocial">Save Links</button>
                     </div>
                 </div>
             </div>

@@ -10,6 +10,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/TemplateUser")
@@ -55,7 +57,6 @@ public class UserTemplateController {
                                     @RequestParam("bio") String bio,
                                     @RequestParam("hourlyRate") String hourlyRate) {
         try {
-            System.out.println("BIO : " + bio);
             token = token.substring(7).trim();
 
             if (!jwtUtil.validateToken(token)) {
@@ -69,6 +70,34 @@ public class UserTemplateController {
                         //UPDATE
                         boolean isUpdated = userService.updateFreelancer(email,name, bio, Double.parseDouble(hourlyRate));
                         return new APIResponce<>(200, "User Updated", isUpdated);
+                    } catch (UsernameNotFoundException ex) {
+                        return new APIResponce<>(404, "No User Found!", null);
+                    }
+                }
+            }
+            return new APIResponce<>(400, "User Not Found!", null);
+        } catch (Exception e) {
+            return new APIResponce<>(500, "Error validating token: " + e.getMessage(), null);
+        }
+    }
+
+    @PostMapping("/updateSkills")
+    public APIResponce<Boolean> updateSkills(@RequestHeader("Authorization") String token,
+                                             @RequestBody ArrayList<String> skills) {
+        try {
+            token = token.substring(7).trim();
+
+            if (!jwtUtil.validateToken(token)) {
+                return new APIResponce<>(401, "Invalid or Expired Token!", null);
+            }
+
+            String email = jwtUtil.extractUsername(token);
+            if(userService.isEmailExist(email)) {
+                if (email != null) {
+                    try {
+                        //UPDATE
+                        boolean isSkillsUpdated = userService.updateSkills(skills,email);
+                        return new APIResponce<>(200, "User Updated", isSkillsUpdated);
                     } catch (UsernameNotFoundException ex) {
                         return new APIResponce<>(404, "No User Found!", null);
                     }

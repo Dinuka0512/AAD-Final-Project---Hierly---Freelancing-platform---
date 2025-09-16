@@ -62,6 +62,7 @@ body {
 .form-group { margin-bottom: 1rem; }
 .form-group label { display: block; margin-bottom: 0.5rem; }
 .form-control { width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid #555; background: #404040; color: #ffffff; }
+.form-control { min-width: 0; }
 .form-control:focus { outline: none; border-color: #28a745; box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
 
 .avatar-uploader { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
@@ -197,6 +198,24 @@ body {
     font-weight: 500;
 }
 
+/* Add new skill placeholder */
+.skill-placeholder {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 20px;
+    border: 1px dashed #28a745;
+    color: #28a745;
+    cursor: pointer;
+    background: rgba(40, 167, 69, 0.06);
+    transition: all 0.2s ease;
+}
+
+.skill-placeholder:hover {
+    background: rgba(40, 167, 69, 0.12);
+}
+
 /* Skills Management */
 .skills-header {
     display: flex;
@@ -250,6 +269,26 @@ body {
 
 .suggestion-item:last-child {
     border-bottom: none;
+}
+
+/* Responsive adjustments for popup inputs */
+@media (max-width: 768px) {
+    .skill-input-container { 
+        flex-wrap: wrap; 
+    }
+    .skill-input-container .form-control { 
+        flex: 1 1 100%; 
+    }
+    .skill-input-container .btn { 
+        width: 100%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-input-container { 
+        flex-direction: column; 
+        gap: 0.6rem; 
+    }
 }
 
 .current-skills-section h5 {
@@ -349,6 +388,25 @@ body {
     justify-content: center;
     text-align: center;
     font-size: 0.9rem;
+}
+
+.social-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0.5rem;
+    background: #1a1a1a;
+    border: 1px dashed #28a745;
+    border-radius: 8px;
+    color: #28a745;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 48px;
+}
+
+.social-placeholder:hover {
+    background: #242424;
 }
 
 .social-link:hover {

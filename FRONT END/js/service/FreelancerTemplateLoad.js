@@ -89,11 +89,17 @@ function freelancersDataLoad(data) {
 
     //SET SOCIAL MEDIA LINKS------------------
     if(data.data.portfolioMediaLinks === null){
-        socialLinksSection.hide();
+        // socialLinksSection.hide();
     }else{
         socialLinksSection.show();
         ///.........
     }
+
+    profileSkills.html(""); // clear first
+    data.data.skills.forEach(skill => {
+        profileSkills.append(`<span class="skill-tag">${skill}</span>`);
+    });
+
 }
 
 let saveBtn = $("#publishChanges");
@@ -137,5 +143,28 @@ function updateUserProfile() {
 
 
 //UPDATE THE USER SKILLS
-var txtSkill = $("#skillInput");
-// var
+var btnSaveSkill = $("#saveSkills");
+btnSaveSkill.on("click", function () {
+    var skills = [];
+    $("#skillsContainer .skill-item span").each(function () {
+        skills.push($(this).text().trim());
+    });
+
+    console.log(skills); // 👉 ["JavaScript", "java"]
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:8080/TemplateUser/updateSkills",
+        dataType: "json",
+        headers: {"Authorization": `Bearer ${token}`},
+        contentType: 'application/json',
+        data: JSON.stringify(skills),
+        success: function (data) {
+            console.log(data);
+        },
+        error: function (data) {
+            console.log(data);
+        }
+    })
+})
+
+
