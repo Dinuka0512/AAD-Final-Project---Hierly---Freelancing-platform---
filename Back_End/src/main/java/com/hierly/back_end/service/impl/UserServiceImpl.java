@@ -59,7 +59,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional
     public boolean updateFreelancer(String email, String name, String bio, double hourlyRate) {
         User user = userRepo.findByEmail(email).get();
         user.setName(name);

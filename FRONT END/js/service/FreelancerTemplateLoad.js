@@ -110,9 +110,9 @@ function updateUserProfile() {
 
     // build URL properly with &
     let url = "http://localhost:8080/TemplateUser/update"
-        + "?name=" + txtName
-        + "&bio=" + txtBio
-        + "&hourlyRate=" + txtHourlyRate;
+        + "?name=" + encodeURIComponent(txtName)
+        + "&bio=" + encodeURIComponent(txtBio)
+        + "&hourlyRate=" + encodeURIComponent(txtHourlyRate);
 
     console.log(url);
 
@@ -134,3 +134,8 @@ function updateUserProfile() {
         }
     });
 }
+
+
+//UPDATE THE USER SKILLS
+var txtSkill = $("#skillInput");
+// var

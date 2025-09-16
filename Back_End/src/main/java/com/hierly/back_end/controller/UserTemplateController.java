@@ -55,7 +55,7 @@ public class UserTemplateController {
                                     @RequestParam("bio") String bio,
                                     @RequestParam("hourlyRate") String hourlyRate) {
         try {
-            System.out.println("HI");
+            System.out.println("BIO : " + bio);
             token = token.substring(7).trim();
 
             if (!jwtUtil.validateToken(token)) {

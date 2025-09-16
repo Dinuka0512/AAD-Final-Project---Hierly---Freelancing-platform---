@@ -5,38 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9242349e-c56c-42c4-9078-daf78ac51f78" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/AAD-Final-Project---Hierly---Freelancing-platform---.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b9e3242-0b1c-4803-ad42-bab436a8801d.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b9e3242-0b1c-4803-ad42-bab436a8801d/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b9e3242-0b1c-4803-ad42-bab436a8801d/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b9e3242-0b1c-4803-ad42-bab436a8801d/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/BackEndApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/BackEndApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserImageUploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/util/FileUploadUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b9e3242-0b1c-4803-ad42-bab436a8801d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0b9e3242-0b1c-4803-ad42-bab436a8801d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserTemplateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/test/java/com/hierly/back_end/BackEndApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/test/java/com/hierly/back_end/BackEndApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/css/freelancer-dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/css/freelancer-dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/html/freelancer-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/html/freelancer-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/html/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/html/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/js/controller/freelancer-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/controller/freelancer-dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/js/jquery-3.7.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/jquery-3.7.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FRONT END/js/service/FreelancerTemplateLoad.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/service/FreelancerTemplateLoad.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/application.log.2025-09-06.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/application.log.2025-09-07.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/application.log.2025-09-08.0.gz" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -64,35 +42,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.error.html.executor": "Run",
-    "Maven.Back_End [install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.BackEndApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Welcome/OneDrive/Documents/Learning Files/Projects/Seccond Semester/AAD - Advance Api Development/AAD FINAL PROJECT/AAD-Final-Project---Hierly---Freelancing-platform---/FRONT END/assets/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.error.html.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Back_End [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BackEndApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Welcome/OneDrive/Documents/Learning Files/Projects/Seccond Semester/AAD - Advance Api Development/AAD FINAL PROJECT/AAD-Final-Project---Hierly---Freelancing-platform---/FRONT END/assets/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Welcome\OneDrive\Documents\Learning Files\Projects\Seccond Semester\AAD - Advance Api Development\AAD FINAL PROJECT\AAD-Final-Project---Hierly---Freelancing-platform---\FRONT END\assets\images" />
@@ -138,7 +116,9 @@
       <workItem from="1757749980458" duration="15595000" />
       <workItem from="1757780586065" duration="324000" />
       <workItem from="1757783273200" duration="91000" />
-      <workItem from="1757825747992" duration="8127000" />
+      <workItem from="1757825747992" duration="27034000" />
+      <workItem from="1757959982735" duration="726000" />
+      <workItem from="1758003871677" duration="2339000" />
     </task>
     <servers />
   </component>
