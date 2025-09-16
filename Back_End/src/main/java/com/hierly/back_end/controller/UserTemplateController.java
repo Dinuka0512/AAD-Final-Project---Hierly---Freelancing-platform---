@@ -108,4 +108,35 @@ public class UserTemplateController {
             return new APIResponce<>(500, "Error validating token: " + e.getMessage(), null);
         }
     }
+
+    @PostMapping("/updateSocialLinks")
+    public APIResponce<Boolean> updateSiteLinks(@RequestHeader("Authorization") String token,
+                                                @RequestParam("linkedIn") String linkedIn,
+                                                @RequestParam("github") String gitHub,
+                                                @RequestParam("website") String webSite
+    ){
+        try {
+            token = token.substring(7).trim();
+
+            if (!jwtUtil.validateToken(token)) {
+                return new APIResponce<>(401, "Invalid or Expired Token!", null);
+            }
+
+            String email = jwtUtil.extractUsername(token);
+            if(userService.isEmailExist(email)) {
+                if (email != null) {
+                    try {
+                        //UPDATE
+                        boolean isWebLinksAreSaved = userService.saveWebLinks(email, linkedIn, gitHub, webSite);
+                        return new APIResponce<>(200, "User Updated", isWebLinksAreSaved);
+                    } catch (UsernameNotFoundException ex) {
+                        return new APIResponce<>(404, "No User Found!", null);
+                    }
+                }
+            }
+            return new APIResponce<>(400, "User Not Found!", null);
+        } catch (Exception e) {
+            return new APIResponce<>(500, "Error validating token: " + e.getMessage(), null);
+        }
+    }
 }

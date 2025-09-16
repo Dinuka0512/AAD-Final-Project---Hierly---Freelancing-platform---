@@ -52,7 +52,6 @@ function reloadPage(){
         }
     })
 }
-
 function freelancersDataLoad(data) {
     console.log(data);
 
@@ -103,11 +102,9 @@ function freelancersDataLoad(data) {
 }
 
 let saveBtn = $("#publishChanges");
-
 saveBtn.on("click", function () {
     updateUserProfile();
 });
-
 function updateUserProfile() {
     // get values at the time of click
     let txtName = $("#editDisplayName").val();
@@ -167,4 +164,29 @@ btnSaveSkill.on("click", function () {
     })
 })
 
+//UPDATE SOCIAL MEDIA LINKS
+var txtLinkedIn = $("#editLinkedin");
+var txtGithub = $("#editGithub");
+var websiteLink = $("#editPortfolio");
+var btnSaveLinks = $("#saveSocial");
+btnSaveLinks.on("click", function () {
+    var url = "http://localhost:8080/TemplateUser/updateSocialLinks" +
+        "?linkedIn=" + encodeURIComponent(txtLinkedIn.val()) +
+        "&github=" + encodeURIComponent(txtGithub.val()) +
+        "&website=" + encodeURIComponent(websiteLink.val());
 
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        dataType: "json",
+        headers: {"Authorization": `Bearer ${token}`},
+        contentType: 'application/json',
+        success: function (data) {
+            console.log(data);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+})

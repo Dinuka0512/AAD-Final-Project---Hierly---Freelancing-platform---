@@ -418,7 +418,6 @@
         const links = {
             linkedin: inputLinkedin.value.trim(),
             github: inputGithub.value.trim(),
-            twitter: inputTwitter.value.trim(),
             portfolio: inputPortfolio.value.trim()
         };
         renderSocialLinks(links);

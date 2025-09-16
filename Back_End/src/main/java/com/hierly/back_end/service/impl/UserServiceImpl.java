@@ -76,4 +76,14 @@ public class UserServiceImpl implements UserService {
         userRepo.save(user);
         return true;
     }
+
+    @Override
+    public boolean saveWebLinks(String email, String linkedIn, String gitHub, String webSite) {
+        User user = userRepo.findByEmail(email).get();
+        user.setLinkedInLink(linkedIn);
+        user.setGitHubLink(gitHub);
+        user.setWebsiteLink(webSite);
+        userRepo.save(user);
+        return true;
+    }
 }

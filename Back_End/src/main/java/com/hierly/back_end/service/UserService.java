@@ -17,4 +17,6 @@ public interface UserService {
     boolean updateFreelancer(String email, String name, String bio, double hourlyRate);
 
     boolean updateSkills(ArrayList<String> skills, String email);
+
+    boolean saveWebLinks(String email, String linkedIn, String gitHub, String webSite);
 }

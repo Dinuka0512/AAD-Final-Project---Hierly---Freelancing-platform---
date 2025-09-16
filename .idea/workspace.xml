@@ -7,16 +7,11 @@
     <list default="true" id="9242349e-c56c-42c4-9078-daf78ac51f78" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserTemplateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/css/freelancer-dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/css/freelancer-dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/html/freelancer-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/html/freelancer-dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FRONT END/js/controller/freelancer-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/controller/freelancer-dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FRONT END/js/service/FreelancerTemplateLoad.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/service/FreelancerTemplateLoad.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/application.log.2025-09-09.0.gz" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +115,7 @@
       <workItem from="1757783273200" duration="91000" />
       <workItem from="1757825747992" duration="27034000" />
       <workItem from="1757959982735" duration="726000" />
-      <workItem from="1758003871677" duration="12032000" />
+      <workItem from="1758003871677" duration="16755000" />
     </task>
     <servers />
   </component>
