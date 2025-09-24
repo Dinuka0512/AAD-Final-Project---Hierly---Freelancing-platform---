@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9242349e-c56c-42c4-9078-daf78ac51f78" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/CloudinaryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/util/CloudinaryConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserImageUploadController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/UserTemplateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/html/freelancer-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/html/freelancer-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/js/controller/freelancer-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/controller/freelancer-dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/js/service/FreelancerTemplateLoad.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/service/FreelancerTemplateLoad.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/application.log.2025-09-10.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/application.log.2025-09-11.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/application.log.2025-09-12.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/application.log.2025-09-13.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/application.log.2025-09-14.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/application.log.2025-09-15.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/application.log.2025-09-16.0.gz" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +116,7 @@
       <workItem from="1758363041116" duration="706000" />
       <workItem from="1758692473848" duration="760000" />
       <workItem from="1758701119251" duration="679000" />
-      <workItem from="1758731020141" duration="15480000" />
+      <workItem from="1758731020141" duration="16116000" />
     </task>
     <servers />
   </component>
