@@ -404,7 +404,6 @@
         const items = [];
         if (links.linkedin) items.push(`<a href="${links.linkedin}" target="_blank" rel="noopener" class="social-link"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>`);
         if (links.github) items.push(`<a href="${links.github}" target="_blank" rel="noopener" class="social-link"><i class="fab fa-github"></i><span>GitHub</span></a>`);
-        if (links.twitter) items.push(`<a href="${links.twitter}" target="_blank" rel="noopener" class="social-link"><i class="fab fa-twitter"></i><span>Twitter</span></a>`);
         if (links.portfolio) items.push(`<a href="${links.portfolio}" target="_blank" rel="noopener" class="social-link"><i class="fas fa-globe"></i><span>Portfolio</span></a>`);
         // Add an edit tile to modify later
         items.push('<div class="social-placeholder" id="editSocialLinks"><i class="fas fa-pen"></i><span>Edit</span></div>');

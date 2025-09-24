@@ -19,4 +19,6 @@ public interface UserService {
     boolean updateSkills(ArrayList<String> skills, String email);
 
     boolean saveWebLinks(String email, String linkedIn, String gitHub, String webSite);
+
+    boolean updateProfilePicture(String email, String imageUrl);
 }

@@ -11,8 +11,6 @@ let hourlyRate = $("#profileHourlyRate");
 let bioSection = $("#bioSection");
 let profileBio = $("#profileBio");
 let profileSkills = $("#profileSkills");
-let skillsSection = $("#skillsSection");
-let socialLinksSection = $("#socialLinksSection");
 
 reloadPage();
 function reloadPage(){
@@ -68,6 +66,9 @@ function freelancersDataLoad(data) {
         editAvatarPreview.attr("src", "../assets/images/TempUser.png");
     }else{
         //need to load the default picture
+        profileImage.attr("src", data.data.profilePicture);
+        profilePic.attr("src", data.data.profilePicture);
+        editAvatarPreview.attr("src", data.data.profilePicture);
     }
 
     //SET HIERLY RATE ----------------------
@@ -87,12 +88,23 @@ function freelancersDataLoad(data) {
     }
 
     //SET SOCIAL MEDIA LINKS------------------
-    if(data.data.portfolioMediaLinks === null){
-        // socialLinksSection.hide();
-    }else{
-        socialLinksSection.show();
-        ///.........
+    const socialLinksGrid = $("#socialLinksGrid"); // make sure this exists in HTML
+    socialLinksGrid.html(""); // clear previous links
+
+    if(data.data.linkedInLink){
+        socialLinksGrid.append(`<a href="${data.data.linkedInLink}" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a> `);
     }
+    if(data.data.gitHubLink){
+        socialLinksGrid.append(`<a href="${data.data.gitHubLink}" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a> `);
+    }
+    if(data.data.websiteLink){
+        socialLinksGrid.append(`<a href="${data.data.websiteLink}" target="_blank" class="social-link"><i class="fas fa-globe"></i> Portfolio</a>`);
+    }
+
+    socialLinksGrid.append('<div class="social-placeholder" id="editSocialLinks"><i class="fas fa-pen"></i><span>Edit</span></div>');
+
+    // Add click event to the Edit button
+    $("#editSocialLinks").off('click').on('click', openSocialPopup);
 
     profileSkills.html(""); // clear first
     data.data.skills.forEach(skill => {
@@ -100,11 +112,50 @@ function freelancersDataLoad(data) {
     });
 
 }
+function openSocialPopup() {
+    socialPopup.classList.add('active');
+}
 
 let saveBtn = $("#publishChanges");
 saveBtn.on("click", function () {
     updateUserProfile();
 });
+
+
+//IMAGE UPLOAD
+const editAvatarInput = document.getElementById("editAvatarInput");
+
+// When user chooses a file
+editAvatarInput.addEventListener("change", function() {
+    const file = this.files[0]; // get the selected file
+    if (file) {
+        if(file.type === "image/jpeg" || file.type === "image/png") {
+            //PNG OR JPG only
+            const formData = new FormData();
+            formData.append("file", file); // 'file' should match your backend param name
+
+            $.ajax({
+                type: "POST",
+                url: 'http://localhost:8080/TemplateUser/updateProfilePicture',
+                headers: {"Authorization": `Bearer ${token}`},
+                data: formData,
+                processData: false,  // important
+                contentType: false,  // important
+                success: function (data) {
+                    console.log("Uploaded:", data);
+                    reloadPage();
+                },
+                error: function(err) {
+                    console.error(err);
+                }
+            });
+        }
+    }
+});
+
+
+
+
 function updateUserProfile() {
     // get values at the time of click
     let txtName = $("#editDisplayName").val();

@@ -86,4 +86,12 @@ public class UserServiceImpl implements UserService {
         userRepo.save(user);
         return true;
     }
+
+    @Override
+    public boolean updateProfilePicture(String email, String imageUrl) {
+        User user = userRepo.findByEmail(email).get();
+        user.setProfilePicture(imageUrl);
+        userRepo.save(user);
+        return true;
+    }
 }

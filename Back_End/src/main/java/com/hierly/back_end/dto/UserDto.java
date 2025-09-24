@@ -2,6 +2,7 @@ package com.hierly.back_end.dto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ public class UserDto {
     private String email;
     private String password;
     private String role;
+
     private String profilePicture;
 
     //FREELANCER
