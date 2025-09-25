@@ -94,4 +94,15 @@ public class UserServiceImpl implements UserService {
         userRepo.save(user);
         return true;
     }
+
+    @Override
+    public boolean updateClient(String email, String name, String about, String location, String contact) {
+        User user = userRepo.findByEmail(email).get();
+        user.setName(name);
+        user.setBio(about);
+        user.setLocation(location);
+        user.setContact(contact);
+        userRepo.save(user);
+        return true;
+    }
 }

@@ -52,11 +52,217 @@
 /* Profile section tuning */
 #profile .card-header { padding: 1.25rem 1.5rem; }
 #profile .card-body { padding: 1.5rem; }
-#profile #profileForm { width: 100%; max-width: 720px; margin: 0 auto; }
-#profile .form-group { margin-bottom: 16px; }
-#profile .form-group label { color: #ffffff; font-weight: 600; margin-bottom: 8px; display: block; }
-#profile .form-control { width: 100%; background: #404040; border: 1px solid #555; color: #ffffff; border-radius: 10px; padding: 12px 14px; }
-#profile .form-control::placeholder { color: #b0b0b0; }
-#profile .form-control:focus { border-color: #28a745; box-shadow: 0 0 0 0.2rem rgba(40,167,69,0.25); }
+
+/* Profile View Styles */
+.profile-view {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #404040;
+    border-radius: 15px;
+    border: 1px solid #555;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #28a745;
+    flex-shrink: 0;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h3 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.profile-info p {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    margin: 0 0 1rem 0;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    min-width: 80px;
+}
+
+.stat-number {
+    display: block;
+    color: #28a745;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.profile-details {
+    background: #404040;
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid #555;
+}
+
+.detail-item {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail-item:last-child {
+    margin-bottom: 0;
+}
+
+.detail-item label {
+    color: #28a745;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.detail-item p {
+    color: #ffffff;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Popup Styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup-content {
+    background: #2d2d2d;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid #555;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #555;
+}
+
+.popup-header h4 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    color: #b0b0b0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.btn-close:hover {
+    background: #404040;
+    color: #ffffff;
+}
+
+.popup-body {
+    padding: 1.5rem;
+}
+
+.popup-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-top: 1px solid #555;
+}
+
+/* Form styles for popup */
+#profileEditForm { width: 100%; }
+#profileEditForm .form-group { margin-bottom: 16px; }
+#profileEditForm .form-group label { color: #ffffff; font-weight: 600; margin-bottom: 8px; display: block; }
+#profileEditForm .form-control { width: 100%; background: #404040; border: 1px solid #555; color: #ffffff; border-radius: 10px; padding: 12px 14px; }
+#profileEditForm .form-control::placeholder { color: #b0b0b0; }
+#profileEditForm .form-control:focus { border-color: #28a745; box-shadow: 0 0 0 0.2rem rgba(40,167,69,0.25); }
+#profileEditForm textarea.form-control { resize: vertical; min-height: 100px; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .profile-stats {
+        justify-content: center;
+    }
+    
+    .popup-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .popup-footer {
+        flex-direction: column;
+    }
+    
+    .popup-footer .btn {
+        width: 100%;
+    }
+}
 
 

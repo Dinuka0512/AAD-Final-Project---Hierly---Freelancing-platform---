@@ -1,4 +1,5 @@
-(function(){
+(function() {
+    // ===== Navigation =====
     function setActive(sectionId) {
         document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
         document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
@@ -9,23 +10,14 @@
     }
 
     document.querySelectorAll('.nav-link').forEach(a => {
-        a.addEventListener('click', function (e) {
+        a.addEventListener('click', function(e) {
             e.preventDefault();
             const target = this.getAttribute('data-target');
             if (target) setActive(target);
         });
     });
 
-    // Static preview: intercept forms
-    const postForm = document.getElementById('postProjectForm');
-    if (postForm) {
-        postForm.addEventListener('submit', function(e){
-            e.preventDefault();
-            alert('Project posting is disabled in this static preview.');
-        });
-    }
-
-    // Multiple files preview/remove (static)
+    // ===== Multiple files preview/remove =====
     const filesInput = document.getElementById('projectFiles');
     const filesList = document.getElementById('projectFilesList');
     const MAX_FILES = 10;
@@ -44,7 +36,7 @@
             const remove = document.createElement('button');
             remove.className = 'file-remove';
             remove.textContent = 'Remove';
-            remove.addEventListener('click', function(){
+            remove.addEventListener('click', function() {
                 selectedFiles.splice(idx, 1);
                 renderFiles();
             });
@@ -55,7 +47,7 @@
     }
 
     if (filesInput) {
-        filesInput.addEventListener('change', function(){
+        filesInput.addEventListener('change', function() {
             const chosen = Array.from(this.files || []);
             for (const f of chosen) {
                 if (selectedFiles.length >= MAX_FILES) { alert('Maximum 10 files allowed.'); break; }
@@ -67,43 +59,42 @@
         });
     }
 
-    const profileForm = document.getElementById('profileForm');
-    if (profileForm) {
-        profileForm.addEventListener('submit', function(e){
-            e.preventDefault();
-            alert('Profile changes are not saved in this static preview.');
+    // ===== Profile Edit Popup =====
+    const editProfileBtn = document.getElementById('editProfileBtn');
+    const editProfilePopup = document.getElementById('editProfilePopup');
+    const closeEditPopup = document.getElementById('closeEditPopup');
+    const cancelEdit = document.getElementById('cancelEdit');
+
+    function closeEditProfilePopup() {
+        if (editProfilePopup) editProfilePopup.classList.remove('active');
+    }
+
+    if (editProfileBtn && editProfilePopup) {
+        editProfileBtn.addEventListener('click', function() {
+            editProfilePopup.classList.add('active');
         });
     }
 
-    // Avatar preview handling for client profile
-    const input = document.getElementById('clientAvatarInput');
-    const preview = document.getElementById('clientAvatarPreview');
-    const resetBtn = document.getElementById('clientAvatarReset');
-    const defaultSrc = preview ? preview.src : '';
-    if (input && preview) {
-        input.addEventListener('change', function(){
-            const file = this.files && this.files[0];
-            if (!file) return;
-            if (!file.type.startsWith('image/')) {
-                alert('Please select a valid image file.');
-                this.value = '';
-                return;
-            }
-            if (file.size > 2 * 1024 * 1024) {
-                alert('Image must be less than 2MB.');
-                this.value = '';
-                return;
-            }
-            const url = URL.createObjectURL(file);
-            preview.src = url;
+    if (closeEditPopup) closeEditPopup.addEventListener('click', closeEditProfilePopup);
+    if (cancelEdit) cancelEdit.addEventListener('click', closeEditProfilePopup);
+    if (editProfilePopup) {
+        editProfilePopup.addEventListener('click', function(e) {
+            if (e.target === editProfilePopup) closeEditProfilePopup();
         });
     }
-    if (resetBtn && preview) {
-        resetBtn.addEventListener('click', function(){
-            preview.src = defaultSrc;
-            if (input) input.value = '';
+
+    // ===== Avatar Preview / Reset =====
+    const editInput = document.getElementById('editAvatarInput');
+    const editPreview = document.getElementById('editAvatarPreview');
+    const editResetBtn = document.getElementById('editAvatarReset');
+    const editDefaultSrc = editPreview ? editPreview.src : '';
+
+    if (editResetBtn && editPreview) {
+        editResetBtn.addEventListener('click', function() {
+            editPreview.src = editDefaultSrc;
+            if (editInput) editInput.value = '';
+            const mainPreview = document.getElementById('clientAvatarPreview');
+            if (mainPreview) mainPreview.src = editDefaultSrc;
         });
     }
 })();
-
-

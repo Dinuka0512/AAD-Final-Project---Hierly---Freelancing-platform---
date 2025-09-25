@@ -21,4 +21,6 @@ public interface UserService {
     boolean saveWebLinks(String email, String linkedIn, String gitHub, String webSite);
 
     boolean updateProfilePicture(String email, String imageUrl);
+
+    boolean updateClient(String email, String name, String about, String location, String contact);
 }

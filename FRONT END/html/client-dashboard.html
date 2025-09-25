@@ -20,7 +20,7 @@
         
         <div class="navbar-actions">
             <div class="admin-profile">
-                <img src="../assets/Users/user.jpeg" alt="Client" class="admin-avatar">
+                <img src="../assets/images/TempUser.png" alt="Client" class="admin-avatar" id="topProfile">
                 <div class="admin-info">
                     <span class="admin-name" id="clientName">Client User</span>
                     <span class="admin-role">Client</span>
@@ -141,33 +141,107 @@
                 <div class="content-card">
                     <div class="card-header">
                         <h4>Profile</h4>
+                        <div class="header-actions">
+                            <button class="btn btn-primary" id="editProfileBtn">Edit Profile</button>
+                        </div>
                     </div>
                     <div class="card-body">
-                        <form id="profileForm">
-                            <div class="avatar-uploader">
-                                <div class="avatar">
-                                    <img id="clientAvatarPreview" src="../assets/Users/user.jpeg" alt="Profile picture">
+                        <div class="profile-view">
+                            <div class="profile-header">
+                                <div class="profile-avatar">
+                                    <img id="clientAvatarPreview" src="../assets/images/TempUser.png" alt="Profile picture">
                                 </div>
-                                <div class="avatar-actions">
-                                    <label for="clientAvatarInput" class="btn btn-primary">Choose Image</label>
-                                    <input id="clientAvatarInput" type="file" accept="image/*" style="display:none">
-                                    <button type="button" id="clientAvatarReset" class="btn btn-outline-primary">Reset</button>
+                            <div class="profile-info">
+                                <h3 id="clientPName">Loading...</h3>
+                                <p id="emailDisplay">Loading...</p>
+                                <div class="profile-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number" id="profileProjectsCount">-</span>
+                                        <span class="stat-label">Projects Posted</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number" id="profileSpentAmount">-</span>
+                                        <span class="stat-label">Total Spent</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number" id="doneProjects">-</span>
+                                        <span class="stat-label">Done Project Count</span>
+                                    </div>
                                 </div>
-                                <p class="hint">PNG/JPG up to 2MB is recommended.</p>
                             </div>
-                            <div class="form-group">
-                                <label for="displayName">Display Name</label>
-                                <input type="text" id="displayName" class="form-control" placeholder="Your name">
                             </div>
-                            <div class="form-group">
-                                <label for="company">Company</label>
-                                <input type="text" id="company" class="form-control" placeholder="Company (optional)">
+                            
+                            <div class="profile-details" id="detailSection">
+                                <div class="detail-item" id="bioSection">
+                                    <label>About:</label>
+                                    <p id="clientAbout">Loading...</p>
+                                </div>
+                                
+                                <div class="detail-item" id="locationSection">
+                                    <label>Location:</label>
+                                    <p id="profileLocation">Loading...</p>
+                                </div>
+                                
+                                <div class="detail-item" id="contactSection">
+                                    <label>Contact:</label>
+                                    <p id="profileContact">Loading...</p>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </section>
+
+            <!-- Edit Profile Popup -->
+            <div id="editProfilePopup" class="popup-overlay">
+                <div class="popup-content">
+                    <div class="popup-header">
+                        <h4>Edit Profile</h4>
+                        <button class="btn-close" id="closeEditPopup">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="popup-body">
+                        <form id="profileEditForm">
+                            <div class="avatar-uploader">
+                                <div class="avatar">
+                                    <img id="clientProfile" src="../assets/images/TempUser.png" alt="Profile picture">
+                                </div>
+                                <div class="avatar-actions">
+                                    <label for="editAvatarInput" class="btn btn-primary">Choose Image</label>
+                                    <input id="editAvatarInput" type="file" accept="image/*" style="display:none">
+                                    <button type="button" id="editAvatarReset" class="btn btn-outline-primary">Remove</button>
+                                </div>
+                                <p class="hint">PNG/JPG up to 2MB is recommended.</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="editDisplayName">Display Name</label>
+                                <input type="text" id="editDisplayName" class="form-control" placeholder="Your name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="editBio">About</label>
+                                <textarea id="editBio" class="form-control" rows="4" placeholder="Tell freelancers about your business and project needs"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="editLocation">Location</label>
+                                <input type="text" id="editLocation" class="form-control" placeholder="Your location">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="editContact">Contact</label>
+                                <input type="email" id="editContact" class="form-control" placeholder="07X-XXX-XXXX">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="popup-footer">
+                        <button type="button" class="btn btn-outline-primary" id="cancelEdit">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="publishChanges">Save Changes</button>
+                    </div>
+                </div>
+            </div>
 
         </main>
     </div>
@@ -192,7 +266,7 @@
             }
         })();
     </script>
-    <script src="../js/service/FreelancerTemplateLoad.js"></script>
+    <script type="module" src="../js/service/ClientTemplateLoad.js"></script>
 </body>
 </html>
 

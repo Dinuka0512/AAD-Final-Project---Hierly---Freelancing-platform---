@@ -31,9 +31,13 @@ public class User{
     private String role;
 
     private String profilePicture;
+    private String location;
+    private String contact;
 
     //FREELANCER
     private String title;
+
+    @Lob
     private String bio;
     private double hourlyRate;
     private ArrayList<String> skills;
