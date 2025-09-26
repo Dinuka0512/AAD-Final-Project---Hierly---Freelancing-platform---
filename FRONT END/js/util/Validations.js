@@ -32,4 +32,24 @@ export default class Validation {
         const regex = /^\+?[0-9]{7,15}$/;
         return regex.test(value);
     }
+
+    // ✅ Check if string is an Integer
+    static isInteger(value) {
+        if (typeof value !== "string") value = String(value);
+        return /^-?\d+$/.test(value.trim());
+    }
+
+    static isDouble(value) {
+        if (typeof value !== "string") value = String(value);
+        const trimmed = value.trim();
+
+        // ✅ Match only positive numbers with optional decimals
+        if (!/^\d+(\.\d+)?$/.test(trimmed)) {
+            return false;
+        }
+
+        // ✅ Convert to number and check > 0
+        return parseFloat(trimmed) > 0;
+    }
+
 }

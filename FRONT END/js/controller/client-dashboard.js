@@ -17,48 +17,6 @@
         });
     });
 
-    // ===== Multiple files preview/remove =====
-    const filesInput = document.getElementById('projectFiles');
-    const filesList = document.getElementById('projectFilesList');
-    const MAX_FILES = 10;
-    const MAX_SIZE = 5 * 1024 * 1024; // 5MB
-    let selectedFiles = [];
-
-    function renderFiles() {
-        if (!filesList) return;
-        filesList.innerHTML = '';
-        selectedFiles.forEach((f, idx) => {
-            const item = document.createElement('div');
-            item.className = 'file-item';
-            item.innerHTML = `<div class="meta"><i class="fas fa-paperclip"></i><span>${f.name}</span><small>(${Math.ceil(f.size/1024)} KB)</small></div>`;
-            const actions = document.createElement('div');
-            actions.className = 'actions';
-            const remove = document.createElement('button');
-            remove.className = 'file-remove';
-            remove.textContent = 'Remove';
-            remove.addEventListener('click', function() {
-                selectedFiles.splice(idx, 1);
-                renderFiles();
-            });
-            actions.appendChild(remove);
-            item.appendChild(actions);
-            filesList.appendChild(item);
-        });
-    }
-
-    if (filesInput) {
-        filesInput.addEventListener('change', function() {
-            const chosen = Array.from(this.files || []);
-            for (const f of chosen) {
-                if (selectedFiles.length >= MAX_FILES) { alert('Maximum 10 files allowed.'); break; }
-                if (f.size > MAX_SIZE) { alert(`${f.name} exceeds 5MB limit and was skipped.`); continue; }
-                selectedFiles.push(f);
-            }
-            this.value = '';
-            renderFiles();
-        });
-    }
-
     // ===== Profile Edit Popup =====
     const editProfileBtn = document.getElementById('editProfileBtn');
     const editProfilePopup = document.getElementById('editProfilePopup');

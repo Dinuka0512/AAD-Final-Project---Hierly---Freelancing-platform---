@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.ArrayList;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,11 +20,18 @@ public class Project {
     private int id;
     private  String title;
     private  String description;
+
+    //DATES
+    private String postDate;
+    private String dateDue;
+
     private double budget;
-    private String deadline;
+
+    //STATUS - COMPLETE | INCOMPLETE | EXPIRED | IN PROGRESS
     private String status;
 
     //CLIENT
     @ManyToOne
     private User user;
+    private ArrayList<String> files;
 }

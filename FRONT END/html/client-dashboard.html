@@ -117,12 +117,12 @@
                                 <label>Attachments</label>
                                 <div class="file-actions">
                                     <label for="projectFiles" class="btn btn-primary">Add files</label>
-                                    <input id="projectFiles" type="file" multiple style="display:none" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.zip,.txt">
-                                    <span class="hint">Up to 10 files, 5MB each. Images, PDF, DOCX, ZIP, etc.</span>
+                                    <input id="projectFiles" type="file" multiple style="display:none">
+                                    <span class="hint">Up to 10 files, 5MB each. Images, PDF, Videos</span>
                                 </div>
                                 <div id="projectFilesList" class="file-list"></div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Post Project</button>
+                            <button class="btn btn-primary" id="btnPost">Post Project</button>
                         </form>
                     </div>
                 </div>
@@ -267,6 +267,7 @@
         })();
     </script>
     <script type="module" src="../js/service/ClientTemplateLoad.js"></script>
+    <script type="module" src="../js/service/ClientProjectManage.js"></script>
 </body>
 </html>
 

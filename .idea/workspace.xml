@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9242349e-c56c-42c4-9078-daf78ac51f78" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/ProjectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/repositry/ProjectRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/ProjectService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/ProjectServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FRONT END/js/service/ClientProjectManage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/js/service/ClientTemplateLoad.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/service/ClientTemplateLoad.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONT END/js/service/FreelancerTemplateLoad.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/service/FreelancerTemplateLoad.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/controller/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/dto/ProjectDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/dto/ProjectDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/entity/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/CloudinaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/CloudinaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back_End/src/main/java/com/hierly/back_end/service/impl/ProjectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONT END/html/client-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/html/client-dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONT END/js/controller/client-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/controller/client-dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONT END/js/service/ClientProjectManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/service/ClientProjectManage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONT END/js/util/Validations.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONT END/js/util/Validations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,6 +130,7 @@
       <workItem from="1758773254913" duration="2798000" />
       <workItem from="1758811193801" duration="11961000" />
       <workItem from="1758825499800" duration="5331000" />
+      <workItem from="1758868843719" duration="7598000" />
     </task>
     <servers />
   </component>
