@@ -61,9 +61,9 @@ function freelancersDataLoad(data) {
     //SET PROFILE PIC ----------------------------
     if(data.data.profilePicture === null){
         //set the default picture
-        profileImage.attr("src", "../assets/images/TempUser.png");
-        profilePic.attr("src", "../assets/images/TempUser.png");
-        editAvatarPreview.attr("src", "../assets/images/TempUser.png");
+        profileImage.attr("src", "https://res.cloudinary.com/dgokbm0dx/image/upload/v1758830530/Client/fxrkfspq6wlcnhnnrzpj.png");
+        profilePic.attr("src", "https://res.cloudinary.com/dgokbm0dx/image/upload/v1758830530/Client/fxrkfspq6wlcnhnnrzpj.png");
+        editAvatarPreview.attr("src", "https://res.cloudinary.com/dgokbm0dx/image/upload/v1758830530/Client/fxrkfspq6wlcnhnnrzpj.png");
     }else{
         //need to load the default picture
         profileImage.attr("src", data.data.profilePicture);

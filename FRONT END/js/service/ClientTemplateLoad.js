@@ -101,6 +101,10 @@ function setUserData(data){
         topImage.attr("src", data.data.profilePicture);
         profileImage.attr("src", data.data.profilePicture);
         edditSectionImage.attr("src", data.data.profilePicture);
+    }else{
+        topImage.attr("src", "https://res.cloudinary.com/dgokbm0dx/image/upload/v1758830530/Client/fxrkfspq6wlcnhnnrzpj.png");
+        profileImage.attr("src", "https://res.cloudinary.com/dgokbm0dx/image/upload/v1758830530/Client/fxrkfspq6wlcnhnnrzpj.png");
+        edditSectionImage.attr("src", "https://res.cloudinary.com/dgokbm0dx/image/upload/v1758830530/Client/fxrkfspq6wlcnhnnrzpj.png");
     }
 
 
